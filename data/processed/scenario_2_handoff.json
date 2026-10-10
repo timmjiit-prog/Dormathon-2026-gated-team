@@ -1,0 +1,646 @@
+{
+  "case_id": "scenario_2",
+  "business_problem": "Why did gross profit and gross margin fall even though revenue remained broadly stable?",
+  "periods": {
+    "baseline": "2026-08-03 to 2026-08-30",
+    "current": "2026-08-31 to 2026-09-27"
+  },
+  "overall_metrics": {
+    "revenue_baseline": 37945.0,
+    "revenue_current": 37805.0,
+    "revenue_change_pct": -0.37,
+    "units_sold_baseline": 779.0,
+    "units_sold_current": 778.0,
+    "units_sold_change_pct": -0.13,
+    "cogs_baseline": 17825.0,
+    "cogs_current": 21091.7,
+    "cogs_change_pct": 18.33,
+    "gross_profit_baseline": 20120.0,
+    "gross_profit_current": 16713.3,
+    "gross_profit_change_pct": -16.93,
+    "gross_margin_baseline_pct": 53.02,
+    "gross_margin_current_pct": 44.21,
+    "gross_margin_pp_change": -8.81
+  },
+  "product_findings": [
+    {
+      "product_id": "P001",
+      "product_name": null,
+      "revenue_baseline": 12060.0,
+      "revenue_current": 11925.0,
+      "revenue_change_pct": -1.12,
+      "units_sold_baseline": 268.0,
+      "units_sold_current": 265.0,
+      "units_change_pct": -1.12,
+      "avg_selling_price_baseline": 45.0,
+      "avg_selling_price_current": 45.0,
+      "price_change_pct": 0.0,
+      "unit_cost_baseline": 20.0,
+      "unit_cost_current": 20.5,
+      "unit_cost_change_pct": 2.5,
+      "cogs_baseline": 5360.0,
+      "cogs_current": 5432.5,
+      "cogs_change_pct": 1.35,
+      "gross_profit_baseline": 6700.0,
+      "gross_profit_current": 6492.5,
+      "gross_profit_change_pct": -3.1,
+      "gross_margin_baseline_pct": 55.56,
+      "gross_margin_current_pct": 54.44,
+      "gross_margin_pp_change": -1.11,
+      "contribution_to_total_decline_pct": 96.43
+    },
+    {
+      "product_id": "P002",
+      "product_name": null,
+      "revenue_baseline": 19200.0,
+      "revenue_current": 19020.0,
+      "revenue_change_pct": -0.94,
+      "units_sold_baseline": 320.0,
+      "units_sold_current": 317.0,
+      "units_change_pct": -0.94,
+      "avg_selling_price_baseline": 60.0,
+      "avg_selling_price_current": 60.0,
+      "price_change_pct": 0.0,
+      "unit_cost_baseline": 30.0,
+      "unit_cost_current": 40.0,
+      "unit_cost_change_pct": 33.33,
+      "cogs_baseline": 9600.0,
+      "cogs_current": 12680.0,
+      "cogs_change_pct": 32.08,
+      "gross_profit_baseline": 9600.0,
+      "gross_profit_current": 6340.0,
+      "gross_profit_change_pct": -33.96,
+      "gross_margin_baseline_pct": 50.0,
+      "gross_margin_current_pct": 33.33,
+      "gross_margin_pp_change": -16.67,
+      "contribution_to_total_decline_pct": 128.57
+    },
+    {
+      "product_id": "P003",
+      "product_name": null,
+      "revenue_baseline": 6685.0,
+      "revenue_current": 6860.0,
+      "revenue_change_pct": 2.62,
+      "units_sold_baseline": 191.0,
+      "units_sold_current": 196.0,
+      "units_change_pct": 2.62,
+      "avg_selling_price_baseline": 35.0,
+      "avg_selling_price_current": 35.0,
+      "price_change_pct": 0.0,
+      "unit_cost_baseline": 15.0,
+      "unit_cost_current": 15.2,
+      "unit_cost_change_pct": 1.33,
+      "cogs_baseline": 2865.0,
+      "cogs_current": 2979.2,
+      "cogs_change_pct": 3.99,
+      "gross_profit_baseline": 3820.0,
+      "gross_profit_current": 3880.8,
+      "gross_profit_change_pct": 1.59,
+      "gross_margin_baseline_pct": 57.14,
+      "gross_margin_current_pct": 56.57,
+      "gross_margin_pp_change": -0.57,
+      "contribution_to_total_decline_pct": -125.0
+    }
+  ],
+  "inventory_evidence": [
+    {
+      "product_id": "P001",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P001",
+      "metric": "avg_closing_stock",
+      "baseline": 112.11,
+      "current": 126.57,
+      "absolute_change": 14.46,
+      "change_pct": 12.9,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P001",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    },
+    {
+      "product_id": "P002",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P002",
+      "metric": "avg_closing_stock",
+      "baseline": 145.0,
+      "current": 184.18,
+      "absolute_change": 39.18,
+      "change_pct": 27.02,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P002",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    },
+    {
+      "product_id": "P003",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P003",
+      "metric": "avg_closing_stock",
+      "baseline": 121.79,
+      "current": 162.43,
+      "absolute_change": 40.64,
+      "change_pct": 33.37,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P003",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    }
+  ],
+  "procurement_evidence": [
+    {
+      "scope": "ALL",
+      "metric": "avg_approval_time_days",
+      "baseline": 0.56,
+      "current": 0.33,
+      "absolute_change": -0.23,
+      "change_pct": -40.0,
+      "severity": "medium",
+      "evidence_source": "Purchase_Orders.approval_days"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_supplier_lead_time_days",
+      "baseline": 3.33,
+      "current": 3.33,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Purchase_Orders.delivery_date - order_date"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_fulfilment_time_days",
+      "baseline": 3.89,
+      "current": 3.67,
+      "absolute_change": -0.22,
+      "change_pct": -5.71,
+      "severity": "low",
+      "evidence_source": "Purchase_Orders.delivery_date - request_date"
+    },
+    {
+      "scope": "ALL",
+      "metric": "late_orders_count",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Purchase_Orders.delay_days"
+    }
+  ],
+  "supplier_evidence": [
+    {
+      "supplier_id": "S001",
+      "metric": "lead_time_days",
+      "baseline": 3.0,
+      "current": 3.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "unit_cost",
+      "baseline": 20.0,
+      "current": 20.5,
+      "absolute_change": 0.5,
+      "change_pct": 2.5,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 97.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "lead_time_days",
+      "baseline": 3.0,
+      "current": 3.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "unit_cost",
+      "baseline": 30.0,
+      "current": 40.0,
+      "absolute_change": 10.0,
+      "change_pct": 33.33,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 96.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "lead_time_days",
+      "baseline": 4.0,
+      "current": 4.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "unit_cost",
+      "baseline": 15.0,
+      "current": 15.2,
+      "absolute_change": 0.2,
+      "change_pct": 1.33,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 95.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    }
+  ],
+  "customer_evidence": [
+    {
+      "scope": "ALL",
+      "metric": "complaint_count",
+      "baseline": 1.0,
+      "current": 3.0,
+      "absolute_change": 2.0,
+      "change_pct": 200.0,
+      "severity": "medium",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_rate_pct",
+      "baseline": 7.14,
+      "current": 21.43,
+      "absolute_change": 14.29,
+      "change_pct": 200.0,
+      "change_type": "pp_change",
+      "pp_change": 14.29,
+      "severity": "medium",
+      "evidence_source": "Customer_Feedback.complaint_type / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "refund_rate_pct",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero_pp",
+      "pp_change": 0.0,
+      "severity": "watch",
+      "evidence_source": "Customer_Feedback.refund / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "cancellation_rate_pct",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero_pp",
+      "pp_change": 0.0,
+      "severity": "watch",
+      "evidence_source": "Customer_Feedback.status / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_rating",
+      "baseline": 4.57,
+      "current": 4.46,
+      "absolute_change": -0.11,
+      "change_pct": -2.34,
+      "severity": "low",
+      "evidence_source": "Customer_Feedback.rating"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_type_delivery_delay",
+      "baseline": 0.0,
+      "current": 1.0,
+      "absolute_change": 1.0,
+      "change_pct": null,
+      "change_type": "share_change",
+      "share_baseline_pct": 0.0,
+      "share_current_pct": 33.33,
+      "share_pp_change": 33.33,
+      "severity": "info",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_type_packaging",
+      "baseline": 1.0,
+      "current": 2.0,
+      "absolute_change": 1.0,
+      "change_pct": null,
+      "change_type": "share_change",
+      "share_baseline_pct": 100.0,
+      "share_current_pct": 66.67,
+      "share_pp_change": -33.33,
+      "severity": "info",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    }
+  ],
+  "operations_evidence": [],
+  "ranked_anomalies": [
+    {
+      "rank": 1,
+      "metric": "Gross-margin decline",
+      "affected_area": "P002",
+      "baseline": 50.0,
+      "current_value": 33.33,
+      "absolute_change": -16.67,
+      "percentage_change": null,
+      "change_type": "pp_change",
+      "pp_change": -16.67,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.gross_profit / Sales.revenue"
+    },
+    {
+      "rank": 2,
+      "metric": "Gross-profit decline",
+      "affected_area": "P002",
+      "baseline": 9600.0,
+      "current_value": 6340.0,
+      "absolute_change": -3260.0,
+      "percentage_change": -33.96,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.gross_profit"
+    },
+    {
+      "rank": 3,
+      "metric": "Complaint-rate increase",
+      "affected_area": "overall",
+      "baseline": 7.14,
+      "current_value": 21.43,
+      "absolute_change": 14.29,
+      "percentage_change": 200.0,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "rank": 4,
+      "metric": "Gross-margin decline",
+      "affected_area": "overall",
+      "baseline": 53.02,
+      "current_value": 44.21,
+      "absolute_change": -8.81,
+      "percentage_change": null,
+      "change_type": "pp_change",
+      "pp_change": -8.81,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.gross_profit / Sales.revenue"
+    },
+    {
+      "rank": 5,
+      "metric": "Sales unit-cost increase",
+      "affected_area": "P002",
+      "baseline": 30.0,
+      "current_value": 40.0,
+      "absolute_change": 10.0,
+      "percentage_change": 33.33,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.unit_cost"
+    },
+    {
+      "rank": 6,
+      "metric": "Unit-cost increase",
+      "affected_area": "S002",
+      "baseline": 30.0,
+      "current_value": 40.0,
+      "absolute_change": 10.0,
+      "percentage_change": 33.33,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "rank": 7,
+      "metric": "Gross-profit decline",
+      "affected_area": "overall",
+      "baseline": 20120.0,
+      "current_value": 16713.3,
+      "absolute_change": -3406.7,
+      "percentage_change": -16.93,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.gross_profit"
+    },
+    {
+      "rank": 8,
+      "metric": "COGS increase",
+      "affected_area": "overall",
+      "baseline": 17825.0,
+      "current_value": 21091.7,
+      "absolute_change": 3266.7,
+      "percentage_change": 18.33,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Sales.cogs"
+    }
+  ],
+  "sales_investigator": {
+    "primary_finding": "Gross profit declined 16.93% (20,120 to 16,713.3) while revenue remained broadly stable (-0.37%, 37,945 to 37,805). The decline is product-specific to P002, which accounts for 128.57% of the total gross profit decline. P002 gross profit fell 33.96% (9,600 to 6,340) driven by a 33.33% unit cost increase (30 to 40) with zero selling price change (60 unchanged). P002 COGS rose 32.08% (9,600 to 12,680). P001 and P003 gross profits changed minimally (P001 -3.1%, P003 +1.59%). S002 (P002's supplier) unit cost also increased 33.33% (30 to 40), matching the P002 sales unit cost increase exactly. Inventory is healthy across all products (0 stockout hours, 100% availability). Procurement is normal (approval time improved -40%, supplier lead time unchanged at 3.33 days, 0 late orders). All selling prices are unchanged across all products.",
+    "scope_classification": "product-specific (P002 only)",
+    "hypotheses": [
+      {
+        "hypothesis": "Supplier cost increase (S002 driving P002 unit cost inflation)",
+        "supporting_evidence": [
+          "S002 unit cost increased 33.33% (30 to 40)",
+          "P002 sales unit cost increased 33.33% (30 to 40), matching S002 exactly",
+          "P002 COGS increased 32.08% (9,600 to 12,680)",
+          "P002 gross profit declined 33.96% (9,600 to 6,340)",
+          "P002 gross margin declined 16.67pp (50% to 33.33%)",
+          "P002 contribution to total gross profit decline: 128.57%"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [
+          "Reason for S002 unit cost increase requires supplier investigation",
+          "Whether the cost increase is temporary or permanent is unknown"
+        ],
+        "confidence": "HIGH"
+      },
+      {
+        "hypothesis": "Product-specific cost issue (P002 only, not company-wide)",
+        "supporting_evidence": [
+          "P002 unit cost increased 33.33% while P001 increased 2.5% and P003 increased 1.33%",
+          "P002 gross margin declined 16.67pp while P001 declined 1.11pp and P003 declined 0.57pp",
+          "P002 contribution to total decline: 128.57% (more than 100%, meaning other products partially offset)"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [
+          "Root cause of P002/S002 specific cost increase requires supplier domain investigation"
+        ],
+        "confidence": "HIGH"
+      },
+      {
+        "hypothesis": "Revenue or price decline causing profit drop",
+        "supporting_evidence": [
+          "Revenue slightly declined 0.37% (37,945 to 37,805)"
+        ],
+        "contradicting_evidence": [
+          "All selling prices unchanged: P001 45 to 45 (0%), P002 60 to 60 (0%), P003 35 to 35 (0%)",
+          "Revenue decline of 0.37% cannot explain gross profit decline of 16.93%",
+          "P003 revenue actually grew 2.62% with gross profit growing 1.59%"
+        ],
+        "missing_evidence": [],
+        "confidence": "LOW"
+      },
+      {
+        "hypothesis": "Inventory shortage or stockout impact",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "All products have 0 stockout hours in both periods",
+          "All products maintain 100% availability",
+          "Closing stock increased for all products: P001 +12.9%, P002 +27.02%, P003 +33.37%"
+        ],
+        "missing_evidence": [],
+        "confidence": "LOW"
+      }
+    ],
+    "recommended_next_investigation": "Supplier"
+  },
+  "data_quality": {
+    "status": "PASS_WITH_WARNINGS",
+    "missing_values": [],
+    "invalid_values": [],
+    "warnings": [
+      {
+        "sheet": "_meta",
+        "warning": "Detected datasets: ['Sales', 'Inventory', 'Purchase_Orders', 'Suppliers', 'Customer_Feedback']"
+      },
+      {
+        "sheet": "Guide",
+        "warning": "Unexpected sheet 'Guide' — loaded but not validated against a known schema."
+      },
+      {
+        "sheet": "Customer_Feedback",
+        "warning": "Column 'complaint_type' has 24 NaN values (originally 'None' in source, treated as 'no complaint')."
+      }
+    ]
+  }
+}

@@ -1,0 +1,826 @@
+{
+  "case_id": "scenario_3",
+  "business_problem": "Why did customer complaints and late deliveries rise sharply in the current period?",
+  "periods": {
+    "baseline": "2026-08-03 to 2026-08-30",
+    "current": "2026-08-31 to 2026-09-27"
+  },
+  "overall_metrics": {
+    "revenue_baseline": 26650.0,
+    "revenue_current": 26890.0,
+    "revenue_change_pct": 0.9,
+    "complaints_baseline": 12.0,
+    "complaints_current": 40.0,
+    "delivery_delay_complaints_baseline": 4.0,
+    "delivery_delay_complaints_current": 31.0
+  },
+  "product_findings": [
+    {
+      "product_id": "P001",
+      "revenue_baseline": 12250.0,
+      "revenue_current": 12800.0,
+      "revenue_change_pct": 4.49,
+      "units_sold_baseline": 245.0,
+      "units_sold_current": 256.0,
+      "units_change_pct": 4.49,
+      "avg_selling_price_baseline": 50.0,
+      "avg_selling_price_current": 50.0,
+      "price_change_pct": 0.0,
+      "severity": "low"
+    },
+    {
+      "product_id": "P002",
+      "revenue_baseline": 9360.0,
+      "revenue_current": 8960.0,
+      "revenue_change_pct": -4.27,
+      "units_sold_baseline": 234.0,
+      "units_sold_current": 224.0,
+      "units_change_pct": -4.27,
+      "avg_selling_price_baseline": 40.0,
+      "avg_selling_price_current": 40.0,
+      "price_change_pct": 0.0,
+      "severity": "low"
+    },
+    {
+      "product_id": "P003",
+      "revenue_baseline": 5040.0,
+      "revenue_current": 5130.0,
+      "revenue_change_pct": 1.79,
+      "units_sold_baseline": 168.0,
+      "units_sold_current": 171.0,
+      "units_change_pct": 1.79,
+      "avg_selling_price_baseline": 30.0,
+      "avg_selling_price_current": 30.0,
+      "price_change_pct": 0.0,
+      "severity": "low"
+    }
+  ],
+  "inventory_evidence": [
+    {
+      "product_id": "P001",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P001",
+      "metric": "avg_closing_stock",
+      "baseline": 159.5,
+      "current": 202.93,
+      "absolute_change": 43.43,
+      "change_pct": 27.23,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P001",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    },
+    {
+      "product_id": "P002",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P002",
+      "metric": "avg_closing_stock",
+      "baseline": 130.71,
+      "current": 159.64,
+      "absolute_change": 28.93,
+      "change_pct": 22.13,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P002",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    },
+    {
+      "product_id": "P003",
+      "metric": "total_stockout_hours",
+      "baseline": 0.0,
+      "current": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Inventory.stockout_hours"
+    },
+    {
+      "product_id": "P003",
+      "metric": "avg_closing_stock",
+      "baseline": 130.68,
+      "current": 189.21,
+      "absolute_change": 58.53,
+      "change_pct": 44.79,
+      "severity": "low",
+      "evidence_source": "Inventory.closing_stock"
+    },
+    {
+      "product_id": "P003",
+      "metric": "availability_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Inventory.closing_stock / stockout_hours"
+    }
+  ],
+  "procurement_evidence": [
+    {
+      "scope": "ALL",
+      "metric": "avg_approval_time_days",
+      "baseline": 0.0,
+      "current": 0.33,
+      "absolute_change": 0.33,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.approval_days"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_supplier_lead_time_days",
+      "baseline": 3.33,
+      "current": 3.33,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Purchase_Orders.delivery_date - order_date"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_fulfilment_time_days",
+      "baseline": 3.33,
+      "current": 3.67,
+      "absolute_change": 0.34,
+      "change_pct": 10.0,
+      "severity": "low",
+      "evidence_source": "Purchase_Orders.delivery_date - request_date"
+    },
+    {
+      "scope": "ALL",
+      "metric": "late_orders_count",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "watch",
+      "evidence_source": "Purchase_Orders.delay_days"
+    },
+    {
+      "scope": "P001",
+      "metric": "approval_time_by_product",
+      "baseline": 0.0,
+      "current": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.approval_days"
+    },
+    {
+      "scope": "P002",
+      "metric": "approval_time_by_product",
+      "baseline": 0.0,
+      "current": 0.5,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.approval_days"
+    },
+    {
+      "scope": "P003",
+      "metric": "approval_time_by_product",
+      "baseline": 0.0,
+      "current": 0.5,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.approval_days"
+    }
+  ],
+  "supplier_evidence": [
+    {
+      "supplier_id": "S001",
+      "metric": "lead_time_days",
+      "baseline": 3.0,
+      "current": 3.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "unit_cost",
+      "baseline": 24.0,
+      "current": 24.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 97.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S001",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "lead_time_days",
+      "baseline": 3.0,
+      "current": 3.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "unit_cost",
+      "baseline": 18.0,
+      "current": 18.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 96.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S002",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "lead_time_days",
+      "baseline": 4.0,
+      "current": 4.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_avg_lead_days"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "unit_cost",
+      "baseline": 14.0,
+      "current": 14.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "severity": "low",
+      "evidence_source": "Suppliers.current_unit_cost"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "otd_reported_pct",
+      "baseline": null,
+      "current": 95.0,
+      "change_pct": null,
+      "change_type": "no_period_split",
+      "severity": "info",
+      "evidence_source": "Suppliers.on_time_delivery_rate"
+    },
+    {
+      "supplier_id": "S003",
+      "metric": "otd_derived_pct",
+      "baseline": 100.0,
+      "current": 100.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 0.0,
+      "severity": "info",
+      "evidence_source": "Purchase_Orders.delivery_date <= order_date + lead_days"
+    }
+  ],
+  "customer_evidence": [
+    {
+      "scope": "ALL",
+      "metric": "complaint_count",
+      "baseline": 12.0,
+      "current": 40.0,
+      "absolute_change": 28.0,
+      "change_pct": 233.33,
+      "affected_area": "overall",
+      "severity": "medium",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_rate_pct",
+      "baseline": 15.19,
+      "current": 50.63,
+      "absolute_change": 35.44,
+      "change_pct": 233.33,
+      "change_type": "pp_change",
+      "pp_change": 35.44,
+      "affected_area": "overall",
+      "severity": "medium",
+      "evidence_source": "Customer_Feedback.complaint_type / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "refund_rate_pct",
+      "baseline": 0.0,
+      "current": 0.0,
+      "absolute_change": 0.0,
+      "change_pct": null,
+      "change_type": "base_zero_pp",
+      "pp_change": 0.0,
+      "affected_area": "overall",
+      "severity": "watch",
+      "evidence_source": "Customer_Feedback.refund / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "cancellation_rate_pct",
+      "baseline": 1.27,
+      "current": 2.53,
+      "absolute_change": 1.26,
+      "change_pct": 100.0,
+      "change_type": "pp_change",
+      "pp_change": 1.27,
+      "affected_area": "overall",
+      "severity": "medium",
+      "evidence_source": "Customer_Feedback.status / Sales.transaction_count"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_rating",
+      "baseline": 4.46,
+      "current": 3.87,
+      "absolute_change": -0.59,
+      "change_pct": -13.07,
+      "affected_area": "overall",
+      "severity": "low",
+      "evidence_source": "Customer_Feedback.rating"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_type_delivery_delay",
+      "baseline": 4.0,
+      "current": 31.0,
+      "absolute_change": 27.0,
+      "change_pct": null,
+      "change_type": "share_change",
+      "share_baseline_pct": 33.33,
+      "share_current_pct": 77.5,
+      "share_pp_change": 44.17,
+      "affected_area": "overall",
+      "severity": "info",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_type_packaging",
+      "baseline": 4.0,
+      "current": 3.0,
+      "absolute_change": -1.0,
+      "change_pct": null,
+      "change_type": "share_change",
+      "share_baseline_pct": 33.33,
+      "share_current_pct": 7.5,
+      "share_pp_change": -25.83,
+      "affected_area": "overall",
+      "severity": "info",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "scope": "ALL",
+      "metric": "complaint_type_product_quality",
+      "baseline": 4.0,
+      "current": 6.0,
+      "absolute_change": 2.0,
+      "change_pct": null,
+      "change_type": "share_change",
+      "share_baseline_pct": 33.33,
+      "share_current_pct": 15.0,
+      "share_pp_change": -18.33,
+      "affected_area": "overall",
+      "severity": "info",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    }
+  ],
+  "operations_evidence": [
+    {
+      "scope": "ALL",
+      "metric": "avg_actual_staff",
+      "baseline": 3.5,
+      "current": 2.5,
+      "absolute_change": -1.0,
+      "change_pct": -28.57,
+      "shift": "ALL",
+      "severity": "high",
+      "evidence_source": "Operations.actual_staff"
+    },
+    {
+      "scope": "ALL",
+      "metric": "avg_required_staff",
+      "baseline": 3.5,
+      "current": 3.5,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "shift": "ALL",
+      "severity": "low",
+      "evidence_source": "Operations.required_staff"
+    },
+    {
+      "scope": "ALL",
+      "metric": "staffing_gap",
+      "baseline": 0.0,
+      "current": 1.0,
+      "absolute_change": 1.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "shift": "ALL",
+      "severity": "info",
+      "evidence_source": "Operations.required_staff - Operations.actual_staff"
+    },
+    {
+      "scope": "ALL",
+      "metric": "total_orders_received",
+      "baseline": 2741.0,
+      "current": 2759.0,
+      "absolute_change": 18.0,
+      "change_pct": 0.66,
+      "shift": "ALL",
+      "severity": "low",
+      "evidence_source": "Operations.orders_received"
+    },
+    {
+      "scope": "ALL",
+      "metric": "total_orders_fulfilled",
+      "baseline": 2557.0,
+      "current": 2379.0,
+      "absolute_change": -178.0,
+      "change_pct": -6.96,
+      "shift": "ALL",
+      "severity": "low",
+      "evidence_source": "Operations.orders_fulfilled"
+    },
+    {
+      "scope": "ALL",
+      "metric": "fulfilment_rate_pct",
+      "baseline": 93.29,
+      "current": 86.23,
+      "absolute_change": -7.06,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": -7.06,
+      "shift": "ALL",
+      "severity": "info",
+      "evidence_source": "Operations.orders_fulfilled / Operations.orders_received"
+    },
+    {
+      "scope": "ALL",
+      "metric": "total_capacity_orders",
+      "baseline": 3332.0,
+      "current": 2380.0,
+      "absolute_change": -952.0,
+      "change_pct": -28.57,
+      "shift": "ALL",
+      "severity": "medium",
+      "evidence_source": "Operations.capacity_orders"
+    },
+    {
+      "scope": "ALL",
+      "metric": "capacity_utilization_pct",
+      "baseline": 76.74,
+      "current": 99.96,
+      "absolute_change": 23.22,
+      "change_pct": null,
+      "change_type": "pp_change",
+      "pp_change": 23.22,
+      "shift": "ALL",
+      "severity": "info",
+      "evidence_source": "Operations.orders_received / Operations.capacity_orders"
+    },
+    {
+      "scope": "ALL",
+      "metric": "ops_late_orders",
+      "baseline": 145.0,
+      "current": 303.0,
+      "absolute_change": 158.0,
+      "change_pct": 108.97,
+      "shift": "ALL",
+      "severity": "medium",
+      "evidence_source": "Operations.late_orders"
+    },
+    {
+      "scope": "ALL",
+      "metric": "ops_fulfilment_time_hours",
+      "baseline": 2.81,
+      "current": 3.6,
+      "absolute_change": 0.79,
+      "change_pct": 28.11,
+      "shift": "ALL",
+      "severity": "low",
+      "evidence_source": "Operations.avg_fulfilment_hours"
+    },
+    {
+      "scope": "Day",
+      "metric": "avg_actual_staff",
+      "baseline": 3.0,
+      "current": 3.0,
+      "absolute_change": 0.0,
+      "change_pct": 0.0,
+      "shift": "Day",
+      "severity": "low",
+      "evidence_source": "Operations.actual_staff"
+    },
+    {
+      "scope": "Day",
+      "metric": "ops_late_orders",
+      "baseline": 145.0,
+      "current": 155.0,
+      "absolute_change": 10.0,
+      "change_pct": 6.9,
+      "shift": "Day",
+      "severity": "low",
+      "evidence_source": "Operations.late_orders"
+    },
+    {
+      "scope": "Day",
+      "metric": "ops_fulfilment_time_hours",
+      "baseline": 3.34,
+      "current": 3.41,
+      "absolute_change": 0.07,
+      "change_pct": 2.04,
+      "shift": "Day",
+      "severity": "low",
+      "evidence_source": "Operations.avg_fulfilment_hours"
+    },
+    {
+      "scope": "Evening",
+      "metric": "avg_actual_staff",
+      "baseline": 4.0,
+      "current": 2.0,
+      "absolute_change": -2.0,
+      "change_pct": -50.0,
+      "shift": "Evening",
+      "severity": "high",
+      "evidence_source": "Operations.actual_staff"
+    },
+    {
+      "scope": "Evening",
+      "metric": "ops_late_orders",
+      "baseline": 0.0,
+      "current": 148.0,
+      "absolute_change": 148.0,
+      "change_pct": null,
+      "change_type": "base_zero",
+      "shift": "Evening",
+      "severity": "watch",
+      "evidence_source": "Operations.late_orders"
+    },
+    {
+      "scope": "Evening",
+      "metric": "ops_fulfilment_time_hours",
+      "baseline": 2.29,
+      "current": 3.8,
+      "absolute_change": 1.51,
+      "change_pct": 66.18,
+      "shift": "Evening",
+      "severity": "medium",
+      "evidence_source": "Operations.avg_fulfilment_hours"
+    }
+  ],
+  "ranked_anomalies": [
+    {
+      "rank": 1,
+      "metric": "Complaint-rate increase",
+      "affected_area": "overall",
+      "baseline": 15.19,
+      "current_value": 50.63,
+      "absolute_change": 35.44,
+      "percentage_change": 233.33,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Customer_Feedback.complaint_type"
+    },
+    {
+      "rank": 2,
+      "metric": "Operations staff shortfall",
+      "affected_area": "overall",
+      "baseline": 3.5,
+      "current_value": 2.5,
+      "absolute_change": -1.0,
+      "percentage_change": -28.57,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Operations.actual_staff"
+    },
+    {
+      "rank": 3,
+      "metric": "Operations fulfilment-time increase",
+      "affected_area": "Evening",
+      "baseline": 2.29,
+      "current_value": 3.8,
+      "absolute_change": 1.51,
+      "percentage_change": 66.18,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Operations.avg_fulfilment_hours"
+    },
+    {
+      "rank": 4,
+      "metric": "Operations late-order increase",
+      "affected_area": "ALL",
+      "baseline": 145.0,
+      "current_value": 303.0,
+      "absolute_change": 158.0,
+      "percentage_change": 108.97,
+      "severity": "CRITICAL",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Operations.late_orders"
+    },
+    {
+      "rank": 5,
+      "metric": "Fulfilment-rate decline",
+      "affected_area": "overall",
+      "baseline": 93.29,
+      "current_value": 86.23,
+      "absolute_change": -7.06,
+      "percentage_change": null,
+      "change_type": "pp_change",
+      "pp_change": -7.06,
+      "severity": "HIGH",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Operations.orders_fulfilled / Operations.orders_received"
+    },
+    {
+      "rank": 6,
+      "metric": "Operations late-order increase",
+      "affected_area": "Evening",
+      "baseline": 0.0,
+      "current_value": 148.0,
+      "absolute_change": 148.0,
+      "percentage_change": null,
+      "change_type": "base_zero",
+      "severity": "HIGH",
+      "time_period": "2026-08-31 to 2026-09-27",
+      "evidence_source": "Operations.late_orders"
+    }
+  ],
+  "customer_operations_investigator": {
+    "primary_finding": "Customer complaints rose 233.33% (12 to 40) and late deliveries rose 108.97% (145 to 303) while revenue remained stable (+0.9%, 26,650 to 26,890). The complaint surge is dominated by Delivery Delay complaints (4 to 31, share 33.33% to 77.5%, +44.17pp). Actual staff fell 28.57% (3.5 to 2.5) while required staff remained unchanged at 3.5, creating a staffing gap of 1.0 FTE. Total capacity orders fell 28.57% (3,332 to 2,380) matching the staff reduction rate. Orders fulfilled fell 6.96% (2,557 to 2,379) and fulfilment rate dropped 7.06pp (93.29% to 86.23%). Fulfilment time increased 28.11% (2.81h to 3.6h). The Evening shift is the primary problem area: Evening staff halved (4 to 2, -50%), Evening late orders surged from 0 to 148 (base_zero), and Evening fulfilment time rose 66.18% (2.29h to 3.8h). Day shift was stable (staff 3 to 3, late orders 145 to 155 +6.9%, fulfilment 3.34h to 3.41h +2.04%). Inventory is healthy across all products (0 stockout hours, 100% availability, increasing closing stock). Procurement is normal (approval time 0 to 0.33d, supplier lead time 3.33d unchanged, 0 late PO orders). Suppliers are stable (all lead times, unit costs, and OTD rates unchanged). Cancellation rate rose 100% (1.27% to 2.53%, +1.27pp). Average rating fell 13.07% (4.46 to 3.87).",
+    "scope_classification": "operations-specific (Evening shift worst affected)",
+    "hypotheses": [
+      {
+        "hypothesis": "Evening shift staffing shortfall driving late deliveries and complaints",
+        "supporting_evidence": [
+          "Evening actual staff fell 50% (4 to 2, -2.0 FTE) while Day staff remained unchanged (3 to 3)",
+          "Evening late orders surged from 0 to 148 (base_zero)",
+          "Evening fulfilment time rose 66.18% (2.29h to 3.8h, +1.51h)",
+          "Overall late orders rose 108.97% (145 to 303), with 148 of the 303 coming from Evening shift alone",
+          "Staffing gap of 1.0 FTE (required 3.5, actual 2.5) appeared in current period",
+          "Total capacity orders fell 28.57% (3,332 to 2,380), matching the staff reduction rate",
+          "Day shift late orders only increased 6.9% (145 to 155) vs Evening's 0 to 148"
+        ],
+        "contradicting_evidence": [
+          "Revenue remained stable (+0.9%), suggesting the problem did not affect sales volume",
+          "Day shift operations were largely normal (staff unchanged, late orders +6.9%, fulfilment +2.04%)"
+        ],
+        "missing_evidence": [
+          "Reason for Evening staff reduction (resignation, schedule change, hiring failure) requires HR investigation",
+          "Whether the staff reduction was planned or unplanned is unknown",
+          "Exact timing of staff reduction within the current period is not available at daily granularity"
+        ],
+        "confidence": "HIGH"
+      },
+      {
+        "hypothesis": "Overall operational capacity reduction causing service degradation",
+        "supporting_evidence": [
+          "Actual staff fell 28.57% (3.5 to 2.5) while required staff stayed at 3.5",
+          "Total capacity orders fell 28.57% (3,332 to 2,380), exactly matching staff reduction rate",
+          "Orders fulfilled fell 6.96% (2,557 to 2,379)",
+          "Fulfilment rate dropped 7.06pp (93.29% to 86.23%)",
+          "Fulfilment time increased 28.11% (2.81h to 3.6h)",
+          "Capacity utilization rose from 76.74% to 99.96% (+23.22pp), indicating the system is near saturation with reduced capacity"
+        ],
+        "contradicting_evidence": [
+          "Orders received were stable (+0.66%, 2,741 to 2,759), so demand did not increase",
+          "Revenue was stable (+0.9%), suggesting no revenue impact from service degradation"
+        ],
+        "missing_evidence": [
+          "Root cause of capacity reduction (staffing decision) requires HR/management investigation",
+          "Whether the reduction was cost-driven or involuntary is unknown"
+        ],
+        "confidence": "HIGH"
+      },
+      {
+        "hypothesis": "Delivery delays driving the complaint surge",
+        "supporting_evidence": [
+          "Delivery Delay complaints rose from 4 to 31 (share 33.33% to 77.5%, +44.17pp)",
+          "Late orders rose 108.97% (145 to 303)",
+          "Fulfilment time increased 28.11% (2.81h to 3.6h)",
+          "Complaint rate rose 233.33% (15.19% to 50.63%, +35.44pp)",
+          "Complaint count rose 233.33% (12 to 40)",
+          "Average rating fell 13.07% (4.46 to 3.87)"
+        ],
+        "contradicting_evidence": [
+          "Packaging complaints declined (4 to 3, share 33.33% to 7.5%, -25.83pp)",
+          "Product Quality complaints rose modestly (4 to 6, share 33.33% to 15.0%, -18.33pp)"
+        ],
+        "missing_evidence": [
+          "Whether delivery delays are the sole driver of complaints, or if complaint volume is also influenced by other factors, requires further analysis"
+        ],
+        "confidence": "HIGH"
+      },
+      {
+        "hypothesis": "Supply chain disruption causing late deliveries",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "All supplier lead times unchanged: S001 3.0d, S002 3.0d, S003 4.0d (0% change)",
+          "All supplier unit costs unchanged: S001 24, S002 18, S003 14 (0% change)",
+          "All supplier OTD derived rates at 100% (0pp change)",
+          "Procurement supplier lead time unchanged at 3.33d (0% change)",
+          "Procurement late PO orders at 0 in both periods (base_zero)",
+          "Inventory healthy: 0 stockout hours, 100% availability, increasing closing stock for all products",
+          "Procurement fulfilment time only increased 10% (3.33d to 3.67d), minor compared to ops fulfilment +28.11%"
+        ],
+        "missing_evidence": [],
+        "confidence": "LOW"
+      }
+    ],
+    "recommended_next_investigation": "Operations/HR (investigate reason for staff reduction, especially Evening shift, and whether it was planned or unplanned)"
+  },
+  "data_quality": {
+    "status": "PASS_WITH_WARNINGS",
+    "missing_values": [],
+    "invalid_values": [],
+    "warnings": [
+      {
+        "sheet": "_meta",
+        "warning": "Detected datasets: ['Sales', 'Inventory', 'Purchase_Orders', 'Suppliers', 'Customer_Feedback', 'Operations']"
+      },
+      {
+        "sheet": "Guide",
+        "warning": "Unexpected sheet 'Guide' — loaded but not validated against a known schema."
+      },
+      {
+        "sheet": "Customer_Feedback",
+        "warning": "Column 'complaint_type' has 106 NaN values (originally 'None' in source, treated as 'no complaint')."
+      }
+    ]
+  }
+}
