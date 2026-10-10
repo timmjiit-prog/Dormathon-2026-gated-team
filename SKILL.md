@@ -1,269 +1,198 @@
 ---
-name: rootiq-orchestrator
-description: "Autonomous SME Root Cause Investigation Orchestrator that coordinates end-to-end investigation, specialist analysis, evidence validation, and corrective action generation from a single business goal. This skill should be used when a user reports a significant business problem (revenue drop, margin collapse, inventory bottleneck, operational failure) and requests a complete autonomous investigation using structured business datasets. Trigger phrases include 'investigate revenue drop', 'find root cause', 'autonomous investigation', 'why did revenue decline', 'analyze business failure', 'root cause analysis', or any request to autonomously diagnose and produce a full management action package for an SME business problem."
+name: corrective-action-executor
+description: "Turns validated investigation findings and root causes into actionable, realistic business recovery packages for SME management. This skill should be used after a root cause investigation has been completed and the validated root cause is available. It generates immediate 24-hour actions, preventive process updates, KPI monitoring thresholds, action register tables, and ready-to-send communication drafts. Trigger when a user provides a validated root cause statement and requests corrective actions, recovery plans, action packages, or communication drafts following a business investigation."
 agent_created: true
 ---
 
-# RootIQ Orchestrator
+# Corrective Action Executor
 
 ## Overview
 
-RootIQ Orchestrator is an autonomous investigation coordinator that transforms a single business problem statement into a complete, validated management action package. It orchestrates a structured 10-step workflow spanning goal interpretation, data analysis, specialist delegation, hypothesis generation, causal chain construction, evidence validation, impact quantification, and corrective action generation.
+The Corrective Action Executor transforms validated root cause findings into a complete, actionable business recovery package. Given a validated root cause (typically the output of an investigation skill like RootIQ Orchestrator), it produces five deliverables: immediate actions executable within 24 hours, preventive process changes, KPI monitoring controls with warning and critical thresholds, a consolidated action register table, and ready-to-send professional communication drafts for managers, suppliers, and team members.
 
-The orchestrator does not perform raw data analysis itself — it delegates to specialist agents and integrates their findings into a coherent, validated conclusion. The final deliverable is a comprehensive management investigation report containing the verified root cause, causal chain, financial impact, corrective actions, preventive plans, monitoring KPIs, and an action register.
+The core rule governing this skill: **every action must trace directly back to the validated root cause.** No action is generated that cannot be linked to a specific element of the root cause finding.
 
 ## When to Use
 
 Activate this skill when ALL of the following are present:
 
-- A significant, quantified business problem is reported (e.g., "34.8% revenue drop").
-- Structured business datasets are available for analysis (sales, inventory, procurement, customer data).
-- The user expects a complete investigation package, not just a data summary.
-- The user uses trigger phrases like "autonomously investigate", "find the root cause", or "produce the complete management action package."
+- A validated root cause is available (from an investigation, root cause analysis, or direct user statement).
+- The user requests actionable next steps, a recovery package, or corrective actions.
+- The context is SME business management (operations, sales, inventory, procurement, customer service).
 
-Do NOT activate for simple data lookups, single-metric questions, or when the user only wants a data summary without root cause analysis.
+Do NOT activate for:
+- General business advice or planning unrelated to a specific root cause.
+- Situations where the root cause has not yet been identified or validated.
+- Pure data analysis requests without a root cause finding.
 
-## Investigation Workflow
+## Input Requirements
 
-Execute the following 10 steps in sequence. Each step feeds into the next. Do not skip steps. Document progress at each stage so the user can follow the investigation as it unfolds.
+The skill expects the following input from the user or preceding investigation:
 
-### Step 1: Understand the Goal
+| Input | Required | Description |
+|-------|----------|-------------|
+| Validated Root Cause | Yes | A clear statement of the root cause, ideally with confidence level. |
+| Financial Impact | Recommended | Quantified loss or impact associated with the problem. |
+| Causal Chain | Recommended | The chain from observed problem to root cause, if available. |
+| Business Context | Recommended | Company type, industry, size, and any operational constraints. |
+| Affected Metrics | Recommended | The specific KPIs that were impacted by the problem. |
 
-Identify and document the following before any analysis begins:
+If required input is missing, request it from the user before proceeding. If recommended input is missing, proceed with reasonable assumptions and note them.
 
-- **Business Issue**: What is the reported problem? (e.g., "SME experienced a 34.8% revenue drop this month")
-- **Affected Metrics**: Which specific KPIs are impacted? (e.g., revenue, gross margin, order volume, customer count)
-- **Investigation Period**: What time period is under analysis? Identify the comparison baseline (e.g., current month vs. previous month, or vs. same period last year).
-- **Magnitude**: How severe is the problem? Quantify the deviation from expected performance.
-- **Business Context**: What is the company type, industry, size, and any known recent events that may be relevant?
+## Workflow
 
-Present the goal summary to the user for confirmation before proceeding to planning.
+Execute the following 5 steps in sequence. Each step builds on the validated root cause. The traceability rule applies throughout: every action must trace to the root cause.
 
-### Step 2: Plan the Investigation
+### Step 1: Immediate Action (Within 24 Hours)
 
-Determine which investigation areas are relevant based on the business issue and available datasets. The standard investigation areas are:
+Generate actions that management must execute within 24 hours to stop ongoing damage and restore baseline operations.
 
-| Area | Relevant When |
-|------|---------------|
-| Sales | Revenue, pricing, volume, or product mix changes are involved. |
-| Inventory | Stockouts, overstock, turnover, or supply disruptions are suspected. |
-| Procurement | Supplier issues, cost changes, or delivery problems may be contributing. |
-| Customers | Churn, acquisition, behavior shifts, or satisfaction issues are relevant. |
+Load `references/action-design-framework.md` and follow the Immediate Actions guidelines.
 
-For each selected area, note which datasets will be analyzed and what specific questions the analysis should answer.
+For each immediate action, document:
 
-Load `references/specialist-roles.md` to review the specialist scope definitions and confirm which specialists will be engaged in Step 4.
+- **Action ID**: IA-001, IA-002, etc.
+- **Action**: Specific, actionable description (what exactly to do).
+- **Traces To**: Which element of the validated root cause this addresses.
+- **Objective**: What this action achieves in the immediate term.
+- **Owner**: Recommended role or function responsible (specific job title, not "someone").
+- **Deadline**: Within 24 hours (state the specific clock deadline, e.g., "By 5:00 PM today").
+- **Success Metric**: How to confirm the action worked (binary, threshold, or trend).
+- **Priority**: Always Critical for immediate actions.
+- **Resources Needed**: What is required to execute (must be available with existing resources — no new procurement, hiring, or system implementation).
 
-### Step 3: Execute Data Analysis
+Design guidelines:
+- Generate 3-7 immediate actions depending on the complexity of the root cause.
+- Each action must directly address the root cause mechanism, not just symptoms.
+- Actions must be executable with existing resources (personnel, budget, systems available today).
+- If the root cause cannot be fully resolved in 24 hours (common), the immediate actions should contain the damage while preventive actions (Step 2) address the structural fix.
+- State clearly which actions are "stopping the bleeding" vs. "beginning the fix."
 
-Analyze the uploaded datasets to extract factual findings. This step produces WHAT the data shows — not WHY.
+### Step 2: Preventive Action (Process/Policy Changes)
 
-Perform the following analytical tasks on all relevant datasets:
+Generate actions that modify the underlying process, policy, or system to prevent the root cause from recurring.
 
-1. **Metric Calculation**: Compute all affected metrics for the investigation period and baseline period. Present as a before/after comparison table.
-2. **Segmentation Analysis**: Break down metrics by product category, customer segment, sales channel, region, and time period to identify where the problem is concentrated.
-3. **Trend Analysis**: Plot or describe the time-series behavior to identify when the problem began and how it evolved.
-4. **Anomaly Detection**: Identify outliers, unexpected patterns, or statistical anomalies in the data.
-5. **Correlation Scan**: Check for correlations between metrics (e.g., did stockouts correlate with revenue decline in specific product categories?).
+Load `references/action-design-framework.md` and follow the Preventive Actions guidelines.
 
-Document all findings as structured factual statements with supporting numbers. These findings will be passed to specialists in the next step.
+For each preventive action, document:
 
-### Step 4: Delegate Investigation
+- **Action ID**: PA-001, PA-002, etc.
+- **Action**: Description of the process or policy change.
+- **Traces To**: Which element of the validated root cause this prevents.
+- **Risk Addressed**: What specific recurrence scenario this eliminates.
+- **Owner**: Recommended role or function responsible.
+- **Deadline**: 7-90 days (state specific target date).
+- **Priority**: High or Medium (based on recurrence risk severity).
+- **New Standard**: What the new process, policy, or threshold will be.
+- **Sustainability Check**: How this change will be maintained over time (review frequency, ownership).
+- **Investment Required**: Resources, budget, or technology needed (if any).
 
-Send the factual data findings to specialist agents for domain-specific interpretation. Launch specialist agents using the Agent tool in parallel where possible.
+Design guidelines:
+- Generate 2-5 preventive actions addressing each structural gap identified in the root cause.
+- Preventive actions must modify the process, not just address the specific instance.
+- Include at least one action that creates a new standard operating procedure or policy if one was missing.
+- Include at least one action that introduces a checkpoint or escalation rule if the root cause involved a process failure that went undetected.
+- Consider supplier diversification, inventory policy changes, approval workflow modifications, or system alerts as appropriate to the root cause.
 
-For each specialist area identified in Step 2:
+### Step 3: Monitoring Control (KPI Thresholds)
 
-1. **Prepare the delegation package**: Business context (from Step 1), relevant data findings (from Step 3), and the specific analysis task.
-2. **Launch the specialist agent**: Use the Agent tool with a descriptive prompt that includes the data findings and asks for domain interpretation, contributing factors, quantified impact, and preliminary hypotheses.
-3. **Collect results**: Gather key findings, quantified impacts, and preliminary hypotheses from each specialist.
+Define the monitoring framework that will detect recurrence early and measure recovery.
 
-Refer to `references/specialist-roles.md` for each specialist's scope, key analysis areas, and delegation focus.
+For each monitoring KPI, document:
 
-**Delegation prompt template** (adapt per specialist):
+- **KPI Name**: Descriptive name.
+- **Traces To**: Which root cause indicator this KPI monitors.
+- **Definition**: How the KPI is calculated (formula or calculation method).
+- **Normal Range**: The healthy operating range (min-max or target value).
+- **Warning Threshold**: The value that triggers proactive investigation (before the problem recurs).
+- **Critical Threshold**: The value that triggers immediate escalation and emergency action.
+- **Measurement Frequency**: How often the KPI is checked (hourly, daily, weekly, monthly).
+- **Data Source**: Where the data comes from (system, report, manual check).
+- **Owner**: Who is responsible for monitoring and responding.
+- **Escalation Path**: Who to notify when the warning or critical threshold is breached.
 
-```
-You are a [Specialist Role] analyzing an SME business problem.
+Design guidelines:
+- Generate 3-6 monitoring KPIs covering both the directly affected metrics and leading indicators of the root cause.
+- Warning thresholds must be set BEFORE the problem level — the goal is early detection, not confirmation that the problem has returned.
+- Critical thresholds should correspond to the level at which the problem was observed (the level that triggered the original investigation).
+- Include at least one leading indicator (a metric that changes BEFORE the problem manifests) and one lagging indicator (a metric that confirms the problem has occurred).
+- Define clear escalation paths for both warning and critical threshold breaches.
 
-Business Context: [Problem statement, affected metrics, investigation period]
+### Step 4: Action Register Table
 
-Data Findings Relevant to Your Domain:
-[Paste the specific analytical results from Step 3 that fall within this specialist's scope]
+Consolidate all actions from Steps 1-3 into a single, structured action register.
 
-Your Task:
-1. Identify the top 3-5 significant findings within your domain.
-2. Quantify the impact of each finding (dollar amount or percentage).
-3. Propose 1-2 preliminary root cause hypotheses specific to your domain.
-4. Note any patterns that may connect to another specialist's domain.
+The action register must include ALL actions (immediate, preventive, and monitoring setup) in one table:
 
-Return your analysis in structured format.
-```
-
-Launch all specialist agents simultaneously to maximize efficiency. Collect all results before proceeding to hypothesis generation.
-
-### Step 5: Generate Hypotheses
-
-Synthesize the specialist findings and data analysis results into a minimum of THREE plausible root cause hypotheses.
-
-Load `references/investigation-methodology.md` and follow the Hypothesis Generation section:
-
-1. **Synthesize**: Combine insights across all specialist domains. Look for convergence (multiple specialists pointing to the same cause) and divergence (conflicting interpretations).
-2. **Generate**: Formulate at least three distinct, plausible, specific, and testable hypotheses using the hypothesis template.
-3. **Evaluate**: Score each hypothesis across the four dimensions (Data Alignment 35%, Logical Coherence 25%, Explanatory Power 25%, Refutability 15%).
-4. **Rank**: Order hypotheses by weighted score. The top-ranked hypothesis becomes the primary root cause candidate.
-
-Document all hypotheses with their scores and present them before proceeding to causal chain construction.
-
-### Step 6: Build Causal Chains
-
-For the top-ranked hypothesis, construct a complete causal chain tracing from the observed problem back to the underlying root cause.
-
-Follow the Causal Chain Construction rules in `references/investigation-methodology.md`:
-
-```
-Observed Problem
-  -> Contributing Factor(s) [with quantified metrics]
-    -> Intermediate Cause(s) [with quantified metrics]
-      -> Underlying Root Cause [with quantified metrics]
-```
+| ID | Action | Traces To | Owner/Role | Priority | Recommended Deadline | Success Metric | Status |
+|----|--------|-----------|------------|----------|----------------------|----------------|--------|
 
 Rules:
-- Trace both forward (root cause -> observed problem) and backward (observed problem -> root cause) to verify logical consistency.
-- Quantify every link with a specific metric (percentage, absolute number, dollar amount, or time period).
-- Ensure no gaps in the chain — each link must logically produce the next.
-- Identify ONE primary causal chain. Note secondary chains separately if they exist.
-- Verify the chain accounts for the full magnitude of the observed problem. If there is a residual (unexplained portion), quantify it.
+- Every row must have all fields completed — no empty cells.
+- IDs follow the convention: IA-xxx (immediate), PA-xxx (preventive). Monitoring KPI setup actions use MK-xxx.
+- Priority values: Critical, High, Medium, Low.
+- Status starts as "Not Started" for all actions.
+- Sort by priority (Critical first, then High, Medium, Low) and then by deadline (earliest first).
+- The "Traces To" column is mandatory — it is the core traceability mechanism ensuring no action exists without a root cause link.
 
-### Step 7: Validate
+### Step 5: Communication Draft
 
-Submit the proposed root cause and causal chain to evidence validation before finalizing.
+Produce ready-to-send professional communications tailored to the key stakeholders.
 
-Follow the Evidence Validation protocol in `references/investigation-methodology.md` and execute all five checks:
+Load `references/communication-templates.md` and select the appropriate templates based on the root cause and affected parties.
 
-1. **Data Sufficiency Check**: Is the conclusion supported by at least two independent data sources or analytical perspectives?
-2. **Magnitude Check**: Does the root cause explain the full magnitude of the problem? Quantify any residual.
-3. **Timeline Check**: Does the root cause precede and align with the onset of the observed problem?
-4. **Alternative Elimination**: Were alternative hypotheses actively examined and refuted with specific evidence?
-5. **Consistency Check**: Does the conclusion hold when examined from different analytical angles?
+Determine which communications are needed:
+- **Management Briefing**: Always generated. Informs senior management of the root cause and action plan.
+- **Supplier Communication**: Generated when the root cause involves a supplier or external vendor.
+- **Internal Team Memo**: Generated when the root cause requires process changes that the team must follow.
+- **Customer Communication**: Generated when customers were directly affected by the problem.
 
-Document the validation result as VALIDATED, PARTIALLY VALIDATED, or UNVALIDATED, with specific notes on which checks passed or failed.
+For each communication:
+- Use the corresponding template from `references/communication-templates.md`.
+- Replace all placeholders with specific, factual content from the investigation and action package.
+- Match the tone to the audience (executive for management, professional-collaborative for suppliers, direct-supportive for team, empathetic-professional for customers).
+- Include the root cause summary, financial impact, immediate actions taken, preventive measures planned, and monitoring approach.
+- Keep communications concise — lead with the bottom line, then provide supporting detail.
+- Subject lines must include an urgency indicator (URGENT, HIGH, MEDIUM) matching the highest action priority.
 
-**Validation approach**: Re-examine the raw data findings and specialist outputs to challenge the proposed conclusion. Actively look for evidence that would refute the root cause. If refuting evidence is found and cannot be explained, return to Step 5 and re-evaluate hypotheses.
+Present each communication draft as a complete, ready-to-send message (subject line + body). The user should be able to copy and send without further editing.
 
-### Step 8: Integrate and Rank
+## Traceability Verification
 
-Finalize the root cause and assign a confidence level based on the validation results.
+Before presenting the final output, verify root cause traceability across the entire package:
 
-Follow the Confidence Ranking criteria in `references/investigation-methodology.md`:
+1. List all elements of the validated root cause.
+2. For each element, confirm at least one action addresses it.
+3. List all actions in the package.
+4. For each action, confirm it traces to a specific root cause element.
+5. If any root cause element has no corresponding action, add one.
+6. If any action has no root cause trace, remove it or reframe it.
 
-- **HIGH**: Root cause VALIDATED. All five checks pass. Causal chain complete and quantified at every link. Explains >=90% of observed impact. Multiple independent sources agree.
-- **MEDIUM**: Root cause PARTIALLY VALIDATED. 3-4 checks pass. Causal chain complete but some links have weaker quantification. Explains 70-90% of observed impact.
-- **LOW**: Root cause UNVALIDATED. Fewer than 3 checks pass. Causal chain has gaps. Explains <70% of observed impact.
+State the traceability verification result explicitly: "All [N] root cause elements are addressed by [M] actions. No orphan actions detected."
 
-For MEDIUM confidence: list specific gaps that would raise it to HIGH.
-For LOW confidence: recommend additional data collection or investigation steps.
+## Output Package
 
-### Step 9: Quantify Impact
+Present the complete action package to the user, containing all five components in order:
 
-Calculate the exact financial impact of the root cause.
+1. **Immediate Actions** — Numbered list with full detail per action.
+2. **Preventive Actions** — Numbered list with full detail per action.
+3. **Monitoring Controls** — KPI table with thresholds and escalation paths.
+4. **Action Register** — Consolidated table sorted by priority and deadline.
+5. **Communication Drafts** — Ready-to-send messages for each relevant audience.
 
-Decompose the total impact:
-
-1. **Total Impact**: Aggregate financial loss in absolute currency and percentage change.
-2. **Impact by Contributing Factor**: Break down the total loss by each contributing factor in the causal chain. Each factor's impact should be quantified as both an absolute amount and a percentage of total impact.
-3. **Direct vs. Indirect Costs**: Separate direct losses (e.g., lost revenue from stockouts) from indirect costs (e.g., expedited shipping, customer compensation, estimated brand impact).
-4. **Period Impact**: Loss attributable to the investigation period specifically.
-5. **Projected Forward Impact**: Estimated ongoing loss per month if the root cause remains uncorrected.
-
-Present the impact as a structured table. All currency values should use the appropriate local currency symbol.
-
-### Step 10: Execute Corrective Action Generation
-
-Produce the complete corrective action package with four components:
-
-#### A. Immediate Corrective Actions (0-30 days)
-
-Actions to stop the immediate bleeding. For each action document:
-- Action ID (CA-001, CA-002, ...)
-- Specific action description
-- Objective
-- Recommended owner (function or role)
-- Target timeline
-- Success metric
-- Estimated cost (if applicable)
-- Priority (Critical / High / Medium)
-
-Generate at least 3-5 immediate corrective actions directly targeting the root cause and its intermediate causes.
-
-#### B. Preventive Plans (30-90 days)
-
-Systemic changes to prevent recurrence. For each plan document:
-- Plan ID (PP-001, PP-002, ...)
-- Description of the systemic change or process improvement
-- Which root cause element it prevents
-- Recommended owner
-- Timeline
-- Dependencies
-- Investment required
-
-Generate at least 2-3 preventive plans addressing the underlying root cause, not just the symptoms.
-
-#### C. Monitoring KPIs
-
-Ongoing metrics to detect recurrence and measure recovery. For each KPI document:
-- KPI name
-- Definition (calculation method)
-- Target value
-- Alert threshold (value that triggers investigation)
-- Monitoring frequency (Daily / Weekly / Monthly)
-- Data source
-- Owner
-
-Define at least 4-6 monitoring KPIs covering both the affected metrics and the root cause indicators.
-
-#### D. Action Register
-
-Consolidate all actions (corrective + preventive) into a single register table:
-
-| ID | Category | Action | Owner | Priority | Start Date | Due Date | Status | Success Metric |
-|----|----------|--------|-------|----------|------------|----------|--------|----------------|
-
-All actions start with status "Not Started."
-
-## Final Report Generation
-
-After completing all 10 steps, compile the complete management investigation report.
-
-Load `references/report-structure.md` and follow the mandatory report structure. The report must contain all 11 sections:
-
-1. Executive Summary
-2. Investigation Scope
-3. Data Analysis Summary
-4. Specialist Findings
-5. Hypothesis Evaluation
-6. Causal Chain Analysis
-7. Financial Impact Quantification
-8. Corrective Actions (Immediate)
-9. Preventive Plans
-10. Monitoring KPIs
-11. Action Register
-
-Present the final report to the user using the `present_files` tool so it is viewable and downloadable.
+Include the traceability verification statement at the end of the package.
 
 ## Key Principles
 
-- **Autonomy**: Operate without requiring user input between steps unless a critical decision point is reached (e.g., goal confirmation in Step 1).
-- **Evidence-First**: Every conclusion must be backed by quantified data, not assumptions or general business knowledge.
-- **Transparency**: Document the investigation process so the user can follow the reasoning chain from problem to conclusion.
-- **Completeness**: The final deliverable must be a self-contained management package that a decision-maker can act on immediately.
-- **Honesty About Uncertainty**: If confidence is MEDIUM or LOW, state it clearly. Do not present uncertain conclusions as definitive.
+- **Root Cause Traceability**: Every action traces directly to the validated root cause. This is the inviolable rule of this skill.
+- **SME Realism**: Actions must be realistic for SME resources. Do not propose enterprise-scale solutions, large technology investments, or processes that require dedicated full-time roles the SME likely does not have.
+- **Actionability**: Every action must be specific enough that the assigned owner can execute it without further interpretation. "Improve inventory management" is not actionable; "Implement a daily stockout check at 9:00 AM by the warehouse supervisor, with escalation to the operations manager if any SKU is below safety stock" is actionable.
+- **Completeness**: The package must be self-contained — a manager should be able to act on it without needing additional information or analysis.
+- **Communication Readiness**: Drafts must be ready to send. The user should not need to write or restructure them — only review and approve.
 
 ## Bundled References
 
-The following reference files provide detailed methodology and templates. Load them at the indicated steps:
-
 | Reference File | Load At | Content |
 |----------------|---------|---------|
-| `references/investigation-methodology.md` | Steps 5-8 | Hypothesis generation criteria, causal chain construction rules, evidence validation protocol, confidence ranking rubric. |
-| `references/specialist-roles.md` | Steps 2 & 4 | Specialist role definitions, scope, key analysis areas, delegation prompt template, and integration rules. |
-| `references/report-structure.md` | Final Report | Mandatory 11-section report structure with content requirements and formatting guidelines. |
+| `references/action-design-framework.md` | Steps 1-2 | Action quality criteria, priority levels, deadline guidelines, success metric design, completeness checklist. |
+| `references/communication-templates.md` | Step 5 | Email and memo templates for management, supplier, team, and customer communications, with customization rules. |
