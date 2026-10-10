@@ -1,0 +1,9 @@
+﻿action_id,action,owner_role,priority,recommended_deadline,success_metric,status
+CA-001,"Expedite purchase order approval process - reduce approval time from 3.25 days to under 1 day",Purchasing Manager,Critical,48 hours,"PO approval time < 1 day for P001 orders",Recommended
+CA-002,"Emergency replenishment order for P001 to restore stock levels and eliminate stockouts",Inventory Manager,Critical,24 hours,"P001 stock level restored to baseline (119+ units), zero stockout hours",Recommended
+CA-003,"Contact Supplier S001 to address lead time increase (3 to 5 days) and verify delivery commitments",Purchasing Manager,High,72 hours,"S001 lead time restored to 3 days or alternative supplier identified",Recommended
+CA-004,"Implement automated PO approval workflow with escalation after 4 hours if primary approver unavailable",Operations Manager,High,2 weeks,"Zero PO approvals exceeding 1 day; escalation triggered within 4 hours",Recommended
+CA-005,"Establish minimum stock buffer for P001 at 1.5x average daily sales (approximately 120 units)",Inventory Manager,Medium,1 week,"P001 closing stock never falls below 120 units; auto-reorder at 150 units",Recommended
+CA-006,"Diversify supplier base for P001 - qualify backup supplier to reduce dependency on S001",Purchasing Manager,Medium,4 weeks,"Two qualified suppliers for P001 with lead times under 4 days each",Recommended
+CA-007,"Daily monitoring dashboard for PO approval time, stock levels, and stockout hours for all products",Operations Manager,High,1 week (setup), ongoing,"Dashboard live; daily review logged; alerts at PO > 1 day, stock < 120 units, stockout > 0 hours",Recommended
+CA-008,"Weekly supplier performance review - lead time, OTD rate, and unit cost trends for all suppliers",Purchasing Manager,Medium,2 weeks (setup), ongoing weekly,"Weekly report generated; supplier scorecard maintained; alerts at lead time +20% or OTD < 90%",Recommended

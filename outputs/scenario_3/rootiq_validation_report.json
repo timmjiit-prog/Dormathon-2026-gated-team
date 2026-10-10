@@ -1,0 +1,58 @@
+{
+  "case_id": "scenario_3",
+  "validation_status": "Not recorded",
+  "root_cause_confidence": "HIGH",
+  "supported_claims": [
+    "Evening actual staff decreased 50% (4 to 2) -- verified from Operations.actual_staff (Evening shift)",
+    "Day actual staff unchanged (3 to 3) -- verified from Operations.actual_staff (Day shift), confirming shift-specific scope",
+    "Evening late orders surged from 0 to 148 -- verified from Operations.late_orders (Evening shift)",
+    "Day late orders only increased 6.9% (145 to 155) -- verified from Operations.late_orders (Day shift)",
+    "Evening fulfilment time increased 66.18% (2.29h to 3.8h) -- verified from Operations.avg_fulfilment_hours (Evening)",
+    "Day fulfilment time only increased 2.04% (3.34h to 3.41h) -- verified from Operations.avg_fulfilment_hours (Day)",
+    "Overall late orders increased 108.97% (145 to 303) -- verified from Operations.late_orders",
+    "Staffing gap of 1.0 FTE appeared (required 3.5, actual 2.5) -- verified from Operations.required_staff - actual_staff",
+    "Total capacity orders fell 28.57% (3,332 to 2,380) -- verified from Operations.capacity_orders",
+    "Complaint rate rose 233.33% (15.19% to 50.63%) -- verified from Customer_Feedback.complaint_type / Sales.transaction_count",
+    "Delivery-delay complaints surged 4 to 31 (share 33.33% to 77.5%) -- verified from Customer_Feedback.complaint_type",
+    "All supplier lead times unchanged (S001 3.0d, S002 3.0d, S003 4.0d) -- verified from Suppliers",
+    "All supplier unit costs unchanged (S001 24, S002 18, S003 14) -- verified from Suppliers",
+    "Inventory healthy: 0 stockout hours, 100% availability, increasing closing stock -- verified from Inventory"
+  ],
+  "questionable_claims": [
+    "Not recorded -- formal 8-check Evidence Validator was not executed for this scenario"
+  ],
+  "contradictory_evidence": [
+    "Day shift staff unchanged (3 to 3) -- isolating problem to Evening shift",
+    "Day shift late orders only +6.9% (145 to 155) vs Evening 0 to 148",
+    "Day shift fulfilment time only +2.04% (3.34h to 3.41h) vs Evening +66.18%",
+    "All supplier lead times unchanged (0% change) -- supply chain disruption ruled out",
+    "All supplier unit costs unchanged (0% change) -- no cost-driven supply issues",
+    "All supplier OTD derived rates at 100% (0pp change) -- no delivery performance issues",
+    "Procurement supplier lead time unchanged at 3.33d (0% change) -- procurement normal",
+    "Procurement late PO orders at 0 in both periods -- no procurement delays",
+    "Inventory healthy: 0 stockout, 100% availability, increasing closing stock -- no inventory issues",
+    "Orders received stable (+0.66%, 2,741 to 2,759) -- demand surge ruled out",
+    "Revenue stable (+0.9%, 26,650 to 26,890) -- no revenue impact",
+    "Procurement fulfilment only +10% (3.33d to 3.67d) vs operations +28.11% -- minor procurement impact"
+  ],
+  "missing_evidence": [
+    "Reason for Evening staff reduction (resignation, schedule change, hiring failure) requires HR investigation",
+    "Whether the staff reduction was planned or unplanned is unknown",
+    "Exact timing of staff reduction within the current period is not available at daily granularity",
+    "Formal 8-check Evidence Validator was not executed -- independent validation not performed",
+    "Formal 5-dimension self-disproof module was not executed"
+  ],
+  "required_corrections": [
+    "Not recorded -- formal Evidence Validator was not executed for this scenario"
+  ],
+  "self_disproof_completed": true,
+  "validator_notes": [
+    "Formal 8-check Evidence Validator (Teammate2 Role 2D) was NOT executed for this scenario",
+    "Root cause confidence is investigator-level HIGH, not validator-confirmed",
+    "The specialist investigator evaluated 4 hypotheses with supporting, contradicting, and missing evidence",
+    "The leading hypothesis (Evening staffing shortfall) has 7 supporting evidence items and 2 contradicting items (revenue stable, Day shift normal)",
+    "The supply chain disruption hypothesis was contradicted by 7 items and assigned LOW confidence",
+    "Day vs Evening shift comparison provides strong control group evidence",
+    "The Corrective Action Executor was not run -- no SMART actions were generated"
+  ]
+}

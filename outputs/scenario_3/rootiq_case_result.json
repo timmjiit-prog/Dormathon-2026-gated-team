@@ -1,0 +1,108 @@
+{
+  "case_id": "scenario_3",
+  "business_problem": "Why did customer complaints and late deliveries rise sharply in the current period?",
+  "periods": {
+    "baseline": "2026-08-03 to 2026-08-30",
+    "current": "2026-08-31 to 2026-09-27"
+  },
+  "severity": "CRITICAL",
+  "key_metrics": [
+    {"metric": "complaint_count", "baseline": 12, "current": 40, "change_pct": 233.33},
+    {"metric": "complaint_rate_pct", "baseline": 15.19, "current": 50.63, "change_pp": 35.44},
+    {"metric": "delivery_delay_complaints", "baseline": 4, "current": 31, "change_pct": 675},
+    {"metric": "delivery_delay_complaint_share_pct", "baseline": 33.33, "current": 77.5, "change_pp": 44.17},
+    {"metric": "avg_actual_staff_all", "baseline": 3.5, "current": 2.5, "change_pct": -28.57},
+    {"metric": "required_staff_all", "baseline": 3.5, "current": 3.5, "change_pct": 0},
+    {"metric": "evening_actual_staff", "baseline": 4, "current": 2, "change_pct": -50},
+    {"metric": "day_actual_staff", "baseline": 3, "current": 3, "change_pct": 0},
+    {"metric": "late_orders_all", "baseline": 145, "current": 303, "change_pct": 108.97},
+    {"metric": "evening_late_orders", "baseline": 0, "current": 148, "change_type": "base_zero_spike"},
+    {"metric": "day_late_orders", "baseline": 145, "current": 155, "change_pct": 6.9},
+    {"metric": "fulfilment_time_all_hours", "baseline": 2.81, "current": 3.6, "change_pct": 28.11},
+    {"metric": "evening_fulfilment_time_hours", "baseline": 2.29, "current": 3.8, "change_pct": 66.18},
+    {"metric": "day_fulfilment_time_hours", "baseline": 3.34, "current": 3.41, "change_pct": 2.04},
+    {"metric": "total_capacity_orders", "baseline": 3332, "current": 2380, "change_pct": -28.57},
+    {"metric": "fulfilment_rate_pct", "baseline": 93.29, "current": 86.23, "change_pp": -7.06},
+    {"metric": "customer_rating", "baseline": 4.46, "current": 3.87, "change_pct": -13.07},
+    {"metric": "revenue", "baseline": 26650, "current": 26890, "change_pct": 0.9},
+    {"metric": "all_selling_prices", "baseline": "unchanged", "current": "unchanged", "change_pct": 0},
+    {"metric": "inventory_stockout_hours", "baseline": 0, "current": 0, "change": 0},
+    {"metric": "supplier_lead_time_days", "baseline": 3.33, "current": 3.33, "change_pct": 0},
+    {"metric": "all_supplier_unit_costs", "baseline": "unchanged", "current": "unchanged", "change_pct": 0},
+    {"metric": "all_supplier_otd_rates", "baseline": 100, "current": 100, "change_pp": 0}
+  ],
+  "ranked_hypotheses": [
+    {"rank": 1, "hypothesis": "Evening shift staffing shortfall driving late deliveries and complaints", "confidence": "HIGH", "disposition": "SUPPORTED", "supporting_evidence_count": 7},
+    {"rank": 2, "hypothesis": "Overall operational capacity reduction causing service degradation", "confidence": "HIGH", "disposition": "SUPPORTED", "supporting_evidence_count": 6},
+    {"rank": 3, "hypothesis": "Delivery delays driving the complaint surge", "confidence": "HIGH", "disposition": "SUPPORTED", "supporting_evidence_count": 6},
+    {"rank": 4, "hypothesis": "Supply chain disruption causing late deliveries", "confidence": "LOW", "disposition": "CONTRADICTED", "contradicting_evidence_count": 7}
+  ],
+  "root_cause_chain": [
+    "Observed Problem: Complaints rose 233.33% (12 -> 40) and late orders rose 108.97% (145 -> 303)",
+    "Contributing Factor: Delivery-delay complaints surged 4 -> 31 (share 33.33% -> 77.5%)",
+    "Intermediate Cause: Late orders increased 108.97% with 148 of 303 from Evening shift alone",
+    "Underlying Cause: Evening fulfilment time increased 66.18% (2.29h -> 3.8h) while Day was stable (+2.04%)",
+    "Validated Root Cause: Evening shift staff halved (4 -> 2, -50%) creating 1.0 FTE staffing gap"
+  ],
+  "validated_root_cause": "Evening shift staffing shortfall driving late deliveries and complaints",
+  "confidence": "HIGH",
+  "self_disproof": {
+    "ran": true,
+    "leading_hypothesis": "Evening shift staffing shortfall driving late deliveries and complaints",
+    "survives_challenge": true,
+    "contradictory_evidence": [
+      "Day shift staff unchanged (3 to 3), Day late orders +6.9% (145 to 155), Day fulfilment +2.04% (3.34h to 3.41h) -- Day shift stable, isolating problem to Evening",
+      "All supplier lead times unchanged (S001 3.0d, S002 3.0d, S003 4.0d, 0% change) -- supply chain disruption ruled out",
+      "All supplier unit costs unchanged (S001 24, S002 18, S003 14, 0% change)",
+      "All supplier OTD derived rates at 100% (0pp change)",
+      "Procurement supplier lead time unchanged at 3.33d (0% change)",
+      "Procurement late PO orders at 0 in both periods",
+      "Inventory healthy: 0 stockout hours, 100% availability, increasing closing stock for all products",
+      "Orders received stable (+0.66%, 2,741 to 2,759) -- demand surge ruled out",
+      "Revenue stable (+0.9%, 26,650 to 26,890) -- no revenue impact from service degradation",
+      "Procurement fulfilment time only +10% (3.33d to 3.67d), minor compared to ops +28.11%"
+    ],
+    "stronger_alternative_found": false
+  },
+  "validation": {
+    "status": "Not recorded",
+    "supported_claims": ["Not recorded -- formal 8-check Evidence Validator was not executed for this scenario"],
+    "questionable_claims": ["Not recorded"],
+    "missing_evidence": [
+      "Reason for Evening staff reduction (resignation, schedule change, hiring failure) requires HR investigation",
+      "Whether the staff reduction was planned or unplanned is unknown",
+      "Exact timing of staff reduction within the current period is not available at daily granularity",
+      "Formal 8-check Evidence Validator was not executed -- independent validation not performed",
+      "Formal 5-dimension self-disproof module was not executed"
+    ]
+  },
+  "business_impact": {
+    "complaint_increase": 28,
+    "complaint_rate_increase_pp": 35.44,
+    "late_order_increase": 158,
+    "fulfilment_rate_decline_pp": -7.06,
+    "evening_staff_reduction_fte": -2,
+    "capacity_reduction_orders": -952,
+    "customer_rating_decline": -0.59,
+    "impact_type": "EXACT"
+  },
+  "corrective_actions": {
+    "immediate": "Not recorded -- Corrective Action Executor was not run for this scenario. Investigator recommended next investigation: Operations/HR.",
+    "preventive": "Not recorded",
+    "monitoring_kpi": {
+      "kpi": "Not recorded",
+      "normal_range": "Not recorded",
+      "warning_threshold": "Not recorded",
+      "critical_threshold": "Not recorded"
+    }
+  },
+  "limitations": [
+    "Formal 8-check Evidence Validator was not executed -- confidence is investigator-level (HIGH), not validator-confirmed",
+    "Formal 5-dimension self-disproof module was not executed -- assessment based on investigator's contradicting evidence evaluation",
+    "Corrective Action Executor was not run -- no SMART action register was generated",
+    "Reason for Evening staff reduction is unknown -- requires HR investigation",
+    "Whether the staff reduction was planned or unplanned is unknown",
+    "Exact timing of staff reduction within the current period is not available at daily granularity"
+  ],
+  "status": "PARTIALLY_CONFIRMED"
+}

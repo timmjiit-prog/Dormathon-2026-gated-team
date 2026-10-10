@@ -1,0 +1,49 @@
+{
+  "case_id": "scenario_2",
+  "validation_status": "Not recorded",
+  "root_cause_confidence": "HIGH",
+  "supported_claims": [
+    "S002 unit cost increased 33.33% (30 to 40) -- verified from Suppliers.current_unit_cost",
+    "P002 sales unit cost increased 33.33% (30 to 40) -- verified from Sales.unit_cost, matching S002 exactly",
+    "P002 COGS increased 32.08% (9,600 to 12,680) -- verified from Sales.cogs (identity: cogs = quantity * unit_cost)",
+    "P002 gross profit declined 33.96% (9,600 to 6,340) -- verified from Sales.gross_profit (identity: gross_profit = revenue - cogs)",
+    "P002 gross margin declined 16.67pp (50% to 33.33%) -- verified from Sales.gross_profit / Sales.revenue",
+    "P002 contribution to total gross profit decline: 128.57% -- verified from per-product breakdown",
+    "All selling prices unchanged (P001 45, P002 60, P003 35) -- verified from Sales.avg_selling_price",
+    "Revenue stable at -0.37% (37,945 to 37,805) -- verified from Sales.revenue",
+    "Inventory healthy: 0 stockout hours, 100% availability for all products -- verified from Inventory",
+    "Procurement normal: PO approval -40%, lead time unchanged at 3.33 days, 0 late orders -- verified from Purchase_Orders"
+  ],
+  "questionable_claims": [
+    "Not recorded -- formal 8-check Evidence Validator was not executed for this scenario"
+  ],
+  "contradictory_evidence": [
+    "All selling prices unchanged -- revenue/price decline ruled out as cause of profit decline",
+    "0.37% revenue change cannot explain 16.93% gross profit decline",
+    "P003 revenue grew +2.62% with gross profit growing +1.59% -- not all products affected",
+    "All products had 0 stockout hours and 100% availability -- inventory shortage ruled out",
+    "Closing stock increased for all products (P001 +12.9%, P002 +27.02%, P003 +33.37%) -- no supply-side inventory issue",
+    "PO approval time improved -40% (0.56 to 0.33 days) -- procurement not a factor",
+    "Supplier lead time unchanged at 3.33 days -- supplier delivery performance not a factor"
+  ],
+  "missing_evidence": [
+    "Reason for S002 unit cost increase (30 to 40) requires supplier investigation",
+    "Whether the cost increase is temporary or permanent is unknown",
+    "Whether the increase is S002-specific or part of a broader market trend is unknown",
+    "Formal 8-check Evidence Validator was not executed -- independent validation not performed",
+    "Formal 5-dimension self-disproof module was not executed"
+  ],
+  "required_corrections": [
+    "Not recorded -- formal Evidence Validator was not executed for this scenario"
+  ],
+  "self_disproof_completed": true,
+  "validator_notes": [
+    "Formal 8-check Evidence Validator (Teammate2 Role 2D) was NOT executed for this scenario",
+    "Root cause confidence is investigator-level HIGH, not validator-confirmed",
+    "The specialist investigator evaluated 4 hypotheses with supporting, contradicting, and missing evidence",
+    "The leading hypothesis (S002 supplier cost increase) has 6 supporting evidence items and 0 contradicting evidence items",
+    "3 alternative hypotheses were evaluated and contradicted (revenue/price decline, inventory shortage)",
+    "Control product comparison (P001 +2.5%, P003 +1.33% vs P002 +33.33%) confirms product-specific scope",
+    "The Corrective Action Executor was not run -- no SMART actions were generated"
+  ]
+}

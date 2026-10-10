@@ -1,0 +1,92 @@
+{
+  "case_id": "scenario_2",
+  "business_problem": "Why did gross profit and gross margin fall even though revenue remained broadly stable?",
+  "periods": {
+    "baseline": "2026-08-03 to 2026-08-30",
+    "current": "2026-08-31 to 2026-09-27"
+  },
+  "severity": "CRITICAL",
+  "key_metrics": [
+    {"metric": "revenue", "baseline": 37945, "current": 37805, "change_pct": -0.37},
+    {"metric": "cogs", "baseline": 17825, "current": 21091.7, "change_pct": 18.33},
+    {"metric": "gross_profit", "baseline": 20120, "current": 16713.3, "change_pct": -16.93},
+    {"metric": "gross_margin_pct", "baseline": 53.02, "current": 44.21, "change_pp": -8.81},
+    {"metric": "p002_unit_cost", "baseline": 30, "current": 40, "change_pct": 33.33},
+    {"metric": "p002_cogs", "baseline": 9600, "current": 12680, "change_pct": 32.08},
+    {"metric": "p002_gross_profit", "baseline": 9600, "current": 6340, "change_pct": -33.96},
+    {"metric": "p002_gross_margin_pct", "baseline": 50.0, "current": 33.33, "change_pp": -16.67},
+    {"metric": "s002_unit_cost", "baseline": 30, "current": 40, "change_pct": 33.33},
+    {"metric": "all_selling_prices", "baseline": "unchanged", "current": "unchanged", "change_pct": 0},
+    {"metric": "inventory_stockout_hours", "baseline": 0, "current": 0, "change": 0},
+    {"metric": "po_approval_time_days", "baseline": 0.56, "current": 0.33, "change_pct": -40},
+    {"metric": "supplier_lead_time_days", "baseline": 3.33, "current": 3.33, "change_pct": 0},
+    {"metric": "complaint_rate_pct", "baseline": 7.14, "current": 21.43, "change_pct": 200}
+  ],
+  "ranked_hypotheses": [
+    {"rank": 1, "hypothesis": "Supplier cost increase (S002 driving P002 unit cost inflation)", "confidence": "HIGH", "disposition": "SUPPORTED", "supporting_evidence_count": 6},
+    {"rank": 2, "hypothesis": "Product-specific cost issue (P002 only, not company-wide)", "confidence": "HIGH", "disposition": "SUPPORTED", "supporting_evidence_count": 3},
+    {"rank": 3, "hypothesis": "Revenue or price decline causing profit drop", "confidence": "LOW", "disposition": "CONTRADICTED", "contradicting_evidence_count": 3},
+    {"rank": 4, "hypothesis": "Inventory shortage or stockout impact", "confidence": "LOW", "disposition": "CONTRADICTED", "contradicting_evidence_count": 3}
+  ],
+  "root_cause_chain": [
+    "Observed Problem: Gross profit declined 16.93% (20,120 -> 16,713)",
+    "Contributing Factor: P002 gross profit declined 33.96% (128.57% of total decline)",
+    "Intermediate Cause: P002 COGS increased 32.08% (9,600 -> 12,680) with zero price change",
+    "Underlying Cause: P002 unit cost increased 33.33% (30 -> 40) with all selling prices unchanged",
+    "Validated Root Cause: S002 supplier unit cost increased 33.33% (30 -> 40)"
+  ],
+  "validated_root_cause": "Supplier cost increase (S002 driving P002 unit cost inflation)",
+  "confidence": "HIGH",
+  "self_disproof": {
+    "ran": true,
+    "leading_hypothesis": "Supplier cost increase (S002 driving P002 unit cost inflation)",
+    "survives_challenge": true,
+    "contradictory_evidence": [
+      "P001 unit cost +2.5% and P003 unit cost +1.33% (minimal) vs P002 +33.33% (severe) -- confirms product-specific scope",
+      "All selling prices unchanged -- revenue/price decline ruled out as cause",
+      "0.37% revenue change cannot explain 16.93% gross profit decline",
+      "P003 revenue grew +2.62% with gross profit growing +1.59%",
+      "All products had 0 stockout hours and 100% availability -- inventory shortage ruled out",
+      "Closing stock increased for all products (P001 +12.9%, P002 +27.02%, P003 +33.37%)",
+      "PO approval time improved -40% and supplier lead time unchanged -- procurement issues ruled out"
+    ],
+    "stronger_alternative_found": false
+  },
+  "validation": {
+    "status": "Not recorded",
+    "supported_claims": ["Not recorded -- formal 8-check Evidence Validator was not executed for this scenario"],
+    "questionable_claims": ["Not recorded"],
+    "missing_evidence": [
+      "Reason for S002 unit cost increase requires supplier investigation",
+      "Whether the cost increase is temporary or permanent is unknown",
+      "Whether the increase is S002-specific or part of a broader market trend is unknown"
+    ]
+  },
+  "business_impact": {
+    "total_gross_profit_loss": 3406.7,
+    "gross_profit_decline_pct": -16.93,
+    "gross_margin_decline_pp": -8.81,
+    "p002_gross_profit_loss": 3260,
+    "p002_contribution_to_decline_pct": 128.57,
+    "cogs_increase": 3266.7,
+    "impact_type": "EXACT"
+  },
+  "corrective_actions": {
+    "immediate": "Not recorded -- Corrective Action Executor was not run for this scenario. Investigator recommended next investigation: Supplier domain.",
+    "preventive": "Not recorded",
+    "monitoring_kpi": {
+      "kpi": "Not recorded",
+      "normal_range": "Not recorded",
+      "warning_threshold": "Not recorded",
+      "critical_threshold": "Not recorded"
+    }
+  },
+  "limitations": [
+    "Formal 8-check Evidence Validator was not executed -- confidence is investigator-level (HIGH), not validator-confirmed",
+    "Formal 5-dimension self-disproof module was not executed -- assessment based on investigator's contradicting evidence evaluation",
+    "Corrective Action Executor was not run -- no SMART action register was generated",
+    "Reason for S002 unit cost increase is unknown -- requires supplier investigation",
+    "Whether the cost increase is temporary or permanent is unknown"
+  ],
+  "status": "PARTIALLY_CONFIRMED"
+}

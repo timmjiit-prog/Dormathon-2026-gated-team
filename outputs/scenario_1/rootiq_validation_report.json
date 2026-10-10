@@ -1,0 +1,47 @@
+{
+  "case_id": "scenario_1",
+  "validation_status": "PASS WITH CAUTION",
+  "root_cause_confidence": "LOW",
+  "supported_claims": [
+    "Data Support: PASS -- all metrics traceable to deterministic analyzer output",
+    "Causality vs. Symptom: PASS -- root cause (PO approval) is distinct from symptom (revenue decline)",
+    "Alternative Explanations: PASS -- 2 alternatives explicitly ruled out (customer dissatisfaction, price problem)",
+    "Contradiction Check: PASS -- no internal contradictions in evidence",
+    "Math Verification: PASS -- all calculations verified correct",
+    "AI Fabrication Check: PASS -- no unsupported or fabricated claims detected",
+    "24 supported claims identified across the investigation"
+  ],
+  "questionable_claims": [
+    "Chronology: PASS WITH CAUTION -- timezone-aware revenue-period boundaries not available, timing consistency inferred from period comparison rather than event-level timestamps",
+    "Chain Validation: PASS WITH CAUTION -- mechanism lacks a relevant metric or valid linked chronology, 0/4 causal links provisionally supported",
+    "3 questionable claims identified by validator"
+  ],
+  "contradictory_evidence": [
+    "P002 revenue +4.04% and P003 revenue +2.01% -- unaffected products, consistent with product-specific root cause (supports rather than contradicts, but limits scope)",
+    "Complaint count unchanged (10 -> 10) -- company-wide dissatisfaction less likely",
+    "All product prices unchanged -- price problem definitively ruled out",
+    "Foot traffic / demand data not available -- demand decline cannot be fully ruled out"
+  ],
+  "missing_evidence": [
+    "Timezone-aware revenue-period boundaries and matching outcome timestamp are required",
+    "Submitted mechanism lacks a relevant metric or valid linked chronology",
+    "Event-level timestamps for PO approval -> stockout -> revenue decline causal chain",
+    "Foot traffic / demand data to fully rule out demand decline"
+  ],
+  "required_corrections": [
+    "Provide or explicitly retain this gap as unknown: Timezone-aware revenue-period boundaries and matching outcome timestamp are required.",
+    "Provide or explicitly retain this gap as unknown: Submitted mechanism lacks a relevant metric or valid linked chronology."
+  ],
+  "self_disproof_completed": true,
+  "validator_notes": [
+    "8-check Evidence Validator: 6 PASS, 2 PASS WITH CAUTION, 0 FAIL",
+    "Self-disproof: PASS WITH CAUTION -- 5 dimensions challenged (3 PASS, 2 CAUTION)",
+    "Control groups: PASS -- P002 and P003 unaffected, confirming product-specific scope",
+    "Timing alignment: PASS -- PO approval spike (631%) preceded stockouts and revenue decline",
+    "Alternative explanations: PASS -- 2 alternatives ruled out, 1 gap remains (demand data)",
+    "Missing evidence: CAUTION -- 2 items identified and retained as unknown",
+    "Causal link strength: CAUTION -- 0/4 links provisionally supported (all UNVERIFIED)",
+    "Root cause confidence is LOW (signal HIGH, causal LOW) by conservative design",
+    "AI Fabrication Check: PASS -- no fabricated metrics or unsupported claims"
+  ]
+}

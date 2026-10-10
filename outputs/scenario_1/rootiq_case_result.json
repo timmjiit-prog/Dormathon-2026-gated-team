@@ -1,0 +1,97 @@
+{
+  "case_id": "scenario_1",
+  "business_problem": "Why did revenue decline significantly during the current period?",
+  "periods": {
+    "baseline": "2026-08-03 to 2026-08-30",
+    "current": "2026-08-31 to 2026-09-27"
+  },
+  "severity": "CRITICAL",
+  "key_metrics": [
+    {"metric": "overall_revenue", "baseline": 39975, "current": 32660, "change_pct": -18.3},
+    {"metric": "p001_revenue", "baseline": 30310, "current": 22680, "change_pct": -25.17},
+    {"metric": "p001_stockout_hours", "baseline": 0, "current": 86.6, "change_type": "base_zero_spike"},
+    {"metric": "p001_availability_pct", "baseline": 100, "current": 87.11, "change_pp": -12.89},
+    {"metric": "po_approval_time_days", "baseline": 0.44, "current": 3.25, "change_pct": 631.25},
+    {"metric": "s001_supplier_lead_time_days", "baseline": 3.33, "current": 4.0, "change_pct": 66.67},
+    {"metric": "procurement_fulfilment_time_days", "baseline": 3.78, "current": 7.25, "change_pct": 91.91},
+    {"metric": "p002_revenue_control", "baseline": 5940, "current": 6180, "change_pct": 4.04},
+    {"metric": "p003_revenue_control", "baseline": 3725, "current": 3800, "change_pct": 2.01},
+    {"metric": "complaint_count", "baseline": 10, "current": 10, "change_pct": 0},
+    {"metric": "all_selling_prices", "baseline": "unchanged", "current": "unchanged", "change_pct": 0}
+  ],
+  "ranked_hypotheses": [
+    {"rank": 1, "hypothesis": "Purchase-Order Approval Bottleneck", "confidence": "HIGH", "disposition": "SUPPORTED_SIGNAL", "priority_score": 14.03},
+    {"rank": 2, "hypothesis": "Supplier Delay", "confidence": "HIGH", "disposition": "SUPPORTED_SIGNAL", "priority_score": 6.40},
+    {"rank": 3, "hypothesis": "Inventory Shortage", "confidence": "HIGH", "disposition": "SUPPORTED_SIGNAL", "priority_score": 5.90},
+    {"rank": 4, "hypothesis": "Customer Dissatisfaction", "confidence": "MEDIUM", "disposition": "SUPPORTED_SIGNAL", "priority_score": 3.99},
+    {"rank": 5, "hypothesis": "Demand Decline", "confidence": "LOW", "disposition": "UNRESOLVED", "priority_score": 0},
+    {"rank": 5, "hypothesis": "Price Problem", "confidence": "LOW", "disposition": "UNRESOLVED", "priority_score": 0}
+  ],
+  "root_cause_chain": [
+    "Observed Problem: Revenue declined 18.30% (39,975 -> 32,660)",
+    "Contributing Factor: P001 revenue declined 25.17% (104.31% of total decline)",
+    "Intermediate Cause: P001 stockouts surged 0 -> 86.6 hours (availability 100% -> 87.11%)",
+    "Underlying Cause: Replenishment delayed (S001 lead 3.33->4.0d, fulfilment 3.78->7.25d)",
+    "Validated Root Cause: PO approval time spiked 631% (0.44 -> 3.25 days)"
+  ],
+  "validated_root_cause": "Purchase-Order Approval Bottleneck",
+  "confidence": "LOW",
+  "self_disproof": {
+    "ran": true,
+    "leading_hypothesis": "Purchase-Order Approval Bottleneck",
+    "survives_challenge": true,
+    "contradictory_evidence": [
+      "P002 revenue +4.04% and P003 revenue +2.01% -- unaffected, consistent with product-specific cause",
+      "All product prices unchanged -- price problem definitively ruled out",
+      "Complaint count unchanged (10 -> 10) -- company-wide dissatisfaction less likely"
+    ],
+    "stronger_alternative_found": false
+  },
+  "validation": {
+    "status": "PASS WITH CAUTION",
+    "supported_claims": [
+      "Data Support: PASS",
+      "Chronology: PASS WITH CAUTION",
+      "Causality vs. Symptom: PASS",
+      "Alternative Explanations: PASS",
+      "Contradiction Check: PASS",
+      "Chain Validation: PASS WITH CAUTION",
+      "Math Verification: PASS",
+      "AI Fabrication Check: PASS"
+    ],
+    "questionable_claims": [
+      "Chronology check: timezone-aware revenue-period boundaries not available",
+      "Chain Validation: mechanism lacks a relevant metric or valid linked chronology",
+      "3 questionable claims identified by validator"
+    ],
+    "missing_evidence": [
+      "Timezone-aware revenue-period boundaries and matching outcome timestamp",
+      "Submitted mechanism lacks a relevant metric or valid linked chronology"
+    ]
+  },
+  "business_impact": {
+    "total_revenue_loss": 7315,
+    "revenue_decline_pct": -18.3,
+    "p001_revenue_loss": 7630,
+    "p001_contribution_to_decline_pct": 104.31,
+    "projected_monthly_loss_if_uncorrected": 4982,
+    "impact_type": "EXACT for actual losses; ESTIMATE for projected monthly loss"
+  },
+  "corrective_actions": {
+    "immediate": "Expedite PO approval process -- reduce from 3.25 days to under 1 day (CA-001, Critical, 48h)",
+    "preventive": "Implement automated PO approval workflow with 4-hour escalation (CA-004, High, 2 weeks)",
+    "monitoring_kpi": {
+      "kpi": "PO approval time",
+      "normal_range": "< 1 day",
+      "warning_threshold": "> 1 day",
+      "critical_threshold": "> 2 days"
+    }
+  },
+  "limitations": [
+    "Causal chain links are UNVERIFIED -- event-level timestamps required to upgrade from PROVISIONAL",
+    "Foot traffic / demand data not available -- demand decline cannot be fully ruled out",
+    "Timezone-aware revenue-period boundaries not available",
+    "Confidence is LOW by conservative design -- system does not declare causal certainty without event-linked evidence"
+  ],
+  "status": "PARTIALLY_CONFIRMED"
+}
