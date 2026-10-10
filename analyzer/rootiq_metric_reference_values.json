@@ -1,0 +1,1305 @@
+{
+ "spec_version": "1.0",
+ "source_workbook": "C:\\Users\\Choo Timm Jiit\\Downloads\\RootIQ_SME_Dataset_Scenario1.xlsx",
+ "periods": {
+  "BASELINE": [
+   "2026-08-03",
+   "2026-08-30"
+  ],
+  "CURRENT": [
+   "2026-08-31",
+   "2026-09-27"
+  ],
+  "days_each": 28
+ },
+ "thresholds": {
+  "REVENUE_PCT": 10.0,
+  "CONTRIB_DOMINANT": 50.0,
+  "STOCKOUT_DAYS": 1,
+  "AVAILABILITY_PP": -2.0,
+  "CLOSING_STOCK_PCT": -25.0,
+  "APPROVAL_DELTA_DAYS": 1.0,
+  "APPROVAL_PCT": 100.0,
+  "LEAD_DELTA_DAYS": 0.0,
+  "DELAY_ABNORMAL_DAYS": 2,
+  "OTD_MIN_PCT": 90.0,
+  "COMPLAINT_RATE_PP": 5.0,
+  "RATING_DELTA": -0.25,
+  "COMPLAINT_TYPE_PP": 20.0
+ },
+ "metrics": [
+  {
+   "metric_id": "M01",
+   "metric_name": "total_revenue",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 39975,
+   "value_current": 32660,
+   "delta": -7315,
+   "pct_change": -18.2989,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M02",
+   "metric_name": "revenue_pct_change",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 39975,
+   "value_current": 32660,
+   "delta": -7315,
+   "pct_change": -18.2989,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M03",
+   "metric_name": "revenue_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 30310,
+   "value_current": 22680,
+   "delta": -7630,
+   "pct_change": -25.1732,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M04",
+   "metric_name": "revenue_pct_change_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 30310,
+   "value_current": 22680,
+   "delta": -7630,
+   "pct_change": -25.1732,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M05",
+   "metric_name": "units_sold_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 433,
+   "value_current": 324,
+   "delta": -109,
+   "pct_change": -25.1732,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M06",
+   "metric_name": "units_sold_pct_change",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 433,
+   "value_current": 324,
+   "delta": -109,
+   "pct_change": -25.1732,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M07a",
+   "metric_name": "unit_price_per_product",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 70.0,
+   "value_current": 70.0,
+   "delta": 0.0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M08",
+   "metric_name": "contribution_to_revenue_decline",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 50.0,
+   "flags": [],
+   "contribution_pct": 104.3062
+  },
+  {
+   "metric_id": "M03",
+   "metric_name": "revenue_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 5940,
+   "value_current": 6180,
+   "delta": 240,
+   "pct_change": 4.0404,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M04",
+   "metric_name": "revenue_pct_change_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 5940,
+   "value_current": 6180,
+   "delta": 240,
+   "pct_change": 4.0404,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M05",
+   "metric_name": "units_sold_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 198,
+   "value_current": 206,
+   "delta": 8,
+   "pct_change": 4.0404,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M06",
+   "metric_name": "units_sold_pct_change",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 198,
+   "value_current": 206,
+   "delta": 8,
+   "pct_change": 4.0404,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M07a",
+   "metric_name": "unit_price_per_product",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 30.0,
+   "value_current": 30.0,
+   "delta": 0.0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M08",
+   "metric_name": "contribution_to_revenue_decline",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [],
+   "contribution_pct": -3.2809
+  },
+  {
+   "metric_id": "M03",
+   "metric_name": "revenue_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 3725,
+   "value_current": 3800,
+   "delta": 75,
+   "pct_change": 2.0134,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M04",
+   "metric_name": "revenue_pct_change_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 3725,
+   "value_current": 3800,
+   "delta": 75,
+   "pct_change": 2.0134,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M05",
+   "metric_name": "units_sold_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 149,
+   "value_current": 152,
+   "delta": 3,
+   "pct_change": 2.0134,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M06",
+   "metric_name": "units_sold_pct_change",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 149,
+   "value_current": 152,
+   "delta": 3,
+   "pct_change": 2.0134,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M07a",
+   "metric_name": "unit_price_per_product",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 25.0,
+   "value_current": 25.0,
+   "delta": 0.0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M08",
+   "metric_name": "contribution_to_revenue_decline",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [],
+   "contribution_pct": -1.0253
+  },
+  {
+   "metric_id": "M06",
+   "metric_name": "units_sold_pct_change_total",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 780,
+   "value_current": 682,
+   "delta": -98,
+   "pct_change": -12.5641,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 10.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M07b",
+   "metric_name": "blended_avg_price",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 51.25,
+   "value_current": 47.888563049853374,
+   "delta": -3.3614369501466257,
+   "pct_change": -6.5589,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 10.0,
+   "flags": [
+    "mix_affected"
+   ]
+  },
+  {
+   "metric_id": "M09",
+   "metric_name": "ranking_by_negative_revenue_impact",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": -7630,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 25.0,
+   "flags": [],
+   "rank": 1
+  },
+  {
+   "metric_id": "M09",
+   "metric_name": "ranking_by_negative_revenue_impact",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": 75,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 25.0,
+   "flags": [],
+   "rank": 2
+  },
+  {
+   "metric_id": "M09",
+   "metric_name": "ranking_by_negative_revenue_impact",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": null,
+   "value_current": null,
+   "delta": 240,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 25.0,
+   "flags": [],
+   "rank": 3
+  },
+  {
+   "metric_id": "M10",
+   "metric_name": "total_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 86.6,
+   "delta": 86.6,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M11",
+   "metric_name": "avg_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 3.0928571428571425,
+   "delta": 3.0928571428571425,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M12",
+   "metric_name": "stockout_days",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 8,
+   "delta": 8,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 1,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M13",
+   "metric_name": "closing_stock_trend_avg",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 119.10714285714286,
+   "value_current": 47.07142857142857,
+   "delta": -72.03571428571429,
+   "pct_change": -60.4798,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": -25.0,
+   "flags": [],
+   "slope_baseline": -1.3314,
+   "slope_current": 0.7143,
+   "min_baseline": 39,
+   "min_current": 0
+  },
+  {
+   "metric_id": "M14",
+   "metric_name": "availability_pct",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 100.0,
+   "value_current": 87.11309523809524,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": -12.8869,
+   "is_anomaly": true,
+   "threshold_used": -2.0,
+   "flags": [],
+   "availability_days_pct_baseline": 100.0,
+   "availability_days_pct_current": 71.42857142857143
+  },
+  {
+   "metric_id": "M10",
+   "metric_name": "total_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 0,
+   "delta": 0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M11",
+   "metric_name": "avg_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 0.0,
+   "delta": 0.0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M12",
+   "metric_name": "stockout_days",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 0,
+   "delta": 0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 1,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M13",
+   "metric_name": "closing_stock_trend_avg",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 140.39285714285714,
+   "value_current": 214.32142857142858,
+   "delta": 73.92857142857144,
+   "pct_change": 52.6584,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": -25.0,
+   "flags": [],
+   "slope_baseline": 3.5339,
+   "slope_current": 2.6117,
+   "min_baseline": 67,
+   "min_current": 148
+  },
+  {
+   "metric_id": "M14",
+   "metric_name": "availability_pct",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 100.0,
+   "value_current": 100.0,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 0.0,
+   "is_anomaly": false,
+   "threshold_used": -2.0,
+   "flags": [],
+   "availability_days_pct_baseline": 100.0,
+   "availability_days_pct_current": 100.0
+  },
+  {
+   "metric_id": "M10",
+   "metric_name": "total_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 0,
+   "delta": 0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M11",
+   "metric_name": "avg_stockout_hours",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 0.0,
+   "delta": 0.0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 50.0,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M12",
+   "metric_name": "stockout_days",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 0,
+   "delta": 0,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 1,
+   "flags": [
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M13",
+   "metric_name": "closing_stock_trend_avg",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 113.92857142857143,
+   "value_current": 196.85714285714286,
+   "delta": 82.92857142857143,
+   "pct_change": 72.79,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": -25.0,
+   "flags": [],
+   "slope_baseline": 2.3722,
+   "slope_current": 2.5309,
+   "min_baseline": 55,
+   "min_current": 139
+  },
+  {
+   "metric_id": "M14",
+   "metric_name": "availability_pct",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 100.0,
+   "value_current": 100.0,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 0.0,
+   "is_anomaly": false,
+   "threshold_used": -2.0,
+   "flags": [],
+   "availability_days_pct_baseline": 100.0,
+   "availability_days_pct_current": 100.0
+  },
+  {
+   "metric_id": "M15",
+   "metric_name": "avg_po_approval_time",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0.4444444444444444,
+   "value_current": 3.25,
+   "delta": 2.8055555555555554,
+   "pct_change": 631.25,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 1.0,
+   "flags": [],
+   "max_approval_days_baseline": 1,
+   "max_approval_days_current": 8
+  },
+  {
+   "metric_id": "M16",
+   "metric_name": "po_approval_time_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": null
+   },
+   "value_baseline": 0.6666666666666666,
+   "value_current": 7.666666666666667,
+   "delta": 7.0,
+   "pct_change": 1050.0,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 1.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M16",
+   "metric_name": "po_approval_time_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": null
+   },
+   "value_baseline": 0.3333333333333333,
+   "value_current": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "pct_change": 100.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 1.0,
+   "flags": [
+    "small_base"
+   ]
+  },
+  {
+   "metric_id": "M16",
+   "metric_name": "po_approval_time_by_product",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": null
+   },
+   "value_baseline": 0.3333333333333333,
+   "value_current": 0.5,
+   "delta": 0.16666666666666669,
+   "pct_change": 50.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 1.0,
+   "flags": [
+    "small_base"
+   ]
+  },
+  {
+   "metric_id": "M17",
+   "metric_name": "avg_supplier_lead_time",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 3.3333333333333335,
+   "value_current": 4.0,
+   "delta": 0.6666666666666665,
+   "pct_change": 20.0,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": []
+  },
+  {
+   "metric_id": "M18",
+   "metric_name": "delivery_delays_mean",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 0.75,
+   "delta": 0.75,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "base_zero"
+   ],
+   "delayed_po_count_baseline": 0,
+   "delayed_po_count_current": 3,
+   "delay_histogram": {
+    "0": 14,
+    "2": 3
+   }
+  },
+  {
+   "metric_id": "M19",
+   "metric_name": "abnormally_delayed_pos",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 3,
+   "delta": 3,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 2,
+   "flags": [
+    "base_zero"
+   ],
+   "abnormal_po_ids": [
+    "PO004",
+    "PO005",
+    "PO006"
+   ]
+  },
+  {
+   "metric_id": "M20",
+   "metric_name": "supplier_lead_time_change",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": "S001"
+   },
+   "value_baseline": 3,
+   "value_current": 5,
+   "delta": 2,
+   "pct_change": 66.6667,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "no_period_split"
+   ],
+   "lead_time_vs_expected_days": 2
+  },
+  {
+   "metric_id": "M21",
+   "metric_name": "unit_cost_change",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": "S001"
+   },
+   "value_baseline": 34,
+   "value_current": 34.5,
+   "delta": 0.5,
+   "pct_change": 1.4706,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "cost_granularity:two_point_only"
+   ]
+  },
+  {
+   "metric_id": "M22a",
+   "metric_name": "otd_reported_pct",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": "S001"
+   },
+   "value_baseline": null,
+   "value_current": 88,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 90.0,
+   "flags": [
+    "no_period_split"
+   ]
+  },
+  {
+   "metric_id": "M22b",
+   "metric_name": "otd_derived_pct",
+   "group": {
+    "period": null,
+    "product_id": "P001",
+    "supplier_id": "S001"
+   },
+   "value_baseline": 100.0,
+   "value_current": 0.0,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": -100.0,
+   "is_anomaly": true,
+   "threshold_used": 90.0,
+   "flags": [],
+   "reported_vs_derived_gap_pp": 38.0
+  },
+  {
+   "metric_id": "M20",
+   "metric_name": "supplier_lead_time_change",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": "S002"
+   },
+   "value_baseline": 3,
+   "value_current": 3,
+   "delta": 0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": [
+    "no_period_split"
+   ],
+   "lead_time_vs_expected_days": 0
+  },
+  {
+   "metric_id": "M21",
+   "metric_name": "unit_cost_change",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": "S002"
+   },
+   "value_baseline": 14,
+   "value_current": 14,
+   "delta": 0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": [
+    "cost_granularity:two_point_only"
+   ]
+  },
+  {
+   "metric_id": "M22a",
+   "metric_name": "otd_reported_pct",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": "S002"
+   },
+   "value_baseline": null,
+   "value_current": 97,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 90.0,
+   "flags": [
+    "no_period_split"
+   ]
+  },
+  {
+   "metric_id": "M22b",
+   "metric_name": "otd_derived_pct",
+   "group": {
+    "period": null,
+    "product_id": "P002",
+    "supplier_id": "S002"
+   },
+   "value_baseline": 100.0,
+   "value_current": 100.0,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 0.0,
+   "is_anomaly": false,
+   "threshold_used": 90.0,
+   "flags": [],
+   "reported_vs_derived_gap_pp": -3.0
+  },
+  {
+   "metric_id": "M20",
+   "metric_name": "supplier_lead_time_change",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": "S003"
+   },
+   "value_baseline": 4,
+   "value_current": 4,
+   "delta": 0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 0.0,
+   "flags": [
+    "no_period_split"
+   ],
+   "lead_time_vs_expected_days": 0
+  },
+  {
+   "metric_id": "M21",
+   "metric_name": "unit_cost_change",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": "S003"
+   },
+   "value_baseline": 11,
+   "value_current": 11.2,
+   "delta": 0.1999999999999993,
+   "pct_change": 1.8182,
+   "pp_change": null,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "cost_granularity:two_point_only"
+   ]
+  },
+  {
+   "metric_id": "M22a",
+   "metric_name": "otd_reported_pct",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": "S003"
+   },
+   "value_baseline": null,
+   "value_current": 95,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 90.0,
+   "flags": [
+    "no_period_split"
+   ]
+  },
+  {
+   "metric_id": "M22b",
+   "metric_name": "otd_derived_pct",
+   "group": {
+    "period": null,
+    "product_id": "P003",
+    "supplier_id": "S003"
+   },
+   "value_baseline": 100.0,
+   "value_current": 100.0,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 0.0,
+   "is_anomaly": false,
+   "threshold_used": 90.0,
+   "flags": [],
+   "reported_vs_derived_gap_pp": -5.0
+  },
+  {
+   "metric_id": "M23",
+   "metric_name": "complaint_count",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 10,
+   "value_current": 10,
+   "delta": 0,
+   "pct_change": 0.0,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": 20.0,
+   "flags": [
+    "denominator:feedback_records"
+   ],
+   "feedback_records_baseline": 35,
+   "feedback_records_current": 23
+  },
+  {
+   "metric_id": "M24",
+   "metric_name": "complaint_rate_pct",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 28.57142857142857,
+   "value_current": 43.47826086956522,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 14.9068,
+   "is_anomaly": true,
+   "threshold_used": 5.0,
+   "flags": [
+    "denominator:feedback_records"
+   ]
+  },
+  {
+   "metric_id": "M25",
+   "metric_name": "refund_rate_pct",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 4.3478260869565215,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 4.3478,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "denominator:feedback_records",
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M26",
+   "metric_name": "cancellation_rate_pct",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0.0,
+   "value_current": 13.043478260869565,
+   "delta": null,
+   "pct_change": null,
+   "pp_change": 13.0435,
+   "is_anomaly": true,
+   "threshold_used": 0.0,
+   "flags": [
+    "denominator:feedback_records",
+    "base_zero"
+   ]
+  },
+  {
+   "metric_id": "M27",
+   "metric_name": "avg_customer_rating",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 4.442857142857143,
+   "value_current": 4.282608695652174,
+   "delta": -0.16024844720496922,
+   "pct_change": -3.6069,
+   "pp_change": null,
+   "is_anomaly": false,
+   "threshold_used": -0.25,
+   "flags": [
+    "direction:down"
+   ],
+   "n_baseline": 35,
+   "n_current": 23
+  },
+  {
+   "metric_id": "M28",
+   "metric_name": "complaint_type_change",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 7,
+   "value_current": 1,
+   "delta": -6,
+   "pct_change": null,
+   "pp_change": -60.0,
+   "is_anomaly": true,
+   "threshold_used": 20.0,
+   "flags": [],
+   "complaint_type": "Delivery Delay",
+   "share_baseline_pct": 70.0,
+   "share_current_pct": 10.0
+  },
+  {
+   "metric_id": "M28",
+   "metric_name": "complaint_type_change",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 0,
+   "value_current": 5,
+   "delta": 5,
+   "pct_change": null,
+   "pp_change": 50.0,
+   "is_anomaly": true,
+   "threshold_used": 20.0,
+   "flags": [],
+   "complaint_type": "Out of Stock",
+   "share_baseline_pct": 0.0,
+   "share_current_pct": 50.0
+  },
+  {
+   "metric_id": "M28",
+   "metric_name": "complaint_type_change",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 1,
+   "value_current": 1,
+   "delta": 0,
+   "pct_change": null,
+   "pp_change": 0.0,
+   "is_anomaly": false,
+   "threshold_used": 20.0,
+   "flags": [],
+   "complaint_type": "Packaging",
+   "share_baseline_pct": 10.0,
+   "share_current_pct": 10.0
+  },
+  {
+   "metric_id": "M28",
+   "metric_name": "complaint_type_change",
+   "group": {
+    "period": null,
+    "product_id": null,
+    "supplier_id": null
+   },
+   "value_baseline": 2,
+   "value_current": 3,
+   "delta": 1,
+   "pct_change": null,
+   "pp_change": 10.0,
+   "is_anomaly": false,
+   "threshold_used": 20.0,
+   "flags": [],
+   "complaint_type": "Product Quality",
+   "share_baseline_pct": 20.0,
+   "share_current_pct": 30.0
+  }
+ ]
+}
