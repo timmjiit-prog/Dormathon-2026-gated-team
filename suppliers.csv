@@ -1,0 +1,4 @@
+supplier_id,supplier_name,product_id,product_name,expected_lead_time_days,baseline_avg_lead_days,current_avg_lead_days,baseline_unit_cost,current_unit_cost,on_time_delivery_rate_pct
+S001,Supplier X,P001,Product A,3,3.00,5.00,34.00,34.50,88
+S002,Supplier Y,P002,Product B,3,3.00,3.00,14.00,14.00,97
+S003,Supplier Z,P003,Product C,4,4.00,4.00,11.00,11.20,95
